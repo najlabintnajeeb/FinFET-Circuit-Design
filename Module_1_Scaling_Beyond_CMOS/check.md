@@ -1,8 +1,8 @@
 <div align="center">
 
-![Module](https://img.shields.io/badge/Module_1-Scaling_Beyond_CMOS-0d1117?style=plastic&labelColor=4fa3e3&color=0d1117)
-![Lecture](https://img.shields.io/badge/Lecture-L2_of_9-0d1117?style=plastic&labelColor=f5a623&color=0d1117)
-![Status](https://img.shields.io/badge/Status-Complete-0d1117?style=plastic&labelColor=7ed321&color=0d1117)
+[Module](https://img.shields.io/badge/Module_1-Scaling_Beyond_CMOS-0d1117?style=plastic&labelColor=4fa3e3&color=0d1117)
+[Lecture](https://img.shields.io/badge/Lecture-L2_of_9-0d1117?style=plastic&labelColor=f5a623&color=0d1117)
+[Status](https://img.shields.io/badge/Status-Complete-0d1117?style=plastic&labelColor=7ed321&color=0d1117)
 
 # L2 — CMOS Evolution and Next-Gen Candidates
 
