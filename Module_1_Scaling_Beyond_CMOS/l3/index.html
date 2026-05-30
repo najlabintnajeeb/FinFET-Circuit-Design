@@ -2,52 +2,47 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>FinFET Evolution Interactive Lab</title>
+  <title>L3 — FinFET Interactive Lab</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
 <header>
-  <h1>⚡ CMOS Evolution: Planar → FinFET → GAA</h1>
-  <p>Interactive visualization of modern transistor scaling</p>
+  <h1>⚡ L3 — Planar → FinFET → Gate-All-Around</h1>
+  <p>Interactive CMOS device evolution simulator</p>
 </header>
 
-<section class="slider-section">
+<section class="panel">
 
-  <h2>🧬 Device Evolution Slider</h2>
+  <h2>🧬 Device Evolution Control</h2>
 
-  <div class="slider-container">
+  <input type="range" min="0" max="2" value="0" id="slider">
 
-    <input type="range" min="0" max="2" value="0" id="deviceSlider">
+  <div class="device-box" id="deviceBox">
 
-    <div class="device-display">
+    <img id="deviceImg" src="assets/planar.png">
 
-      <img id="deviceImage" src="assets/planar.png">
+    <h2 id="title">Planar MOSFET</h2>
 
-      <h3 id="deviceTitle">Planar MOSFET</h3>
+    <p id="desc">
+      Gate controls only top surface → weak electrostatic control
+    </p>
 
-      <p id="deviceDesc">
-        Gate controls only top surface → weak electrostatic control
-      </p>
-
-    </div>
   </div>
 
 </section>
 
-<section class="physics">
-
-  <h2>⚡ Why FinFET Wins</h2>
+<section class="metrics">
 
   <div class="card">
-    <h3>Leakage Control</h3>
-    <p id="leakageText">High sub-channel leakage in planar devices</p>
+    <h3>Leakage</h3>
+    <p id="leakage">High sub-channel leakage</p>
   </div>
 
   <div class="card">
     <h3>Gate Control</h3>
-    <p id="gateText">Single-side control → weak electrostatics</p>
+    <p id="gate">Single-side control</p>
   </div>
 
 </section>
