@@ -1,5 +1,7 @@
 # L3 — Introduction To FinFETs
 
+[View Interactive 3D FinFET Model](./finfet-3d.html)
+
 
 ![Transistor Evolution](https://via.placeholder.com/800x400?text=Planar+→+FinFET+→+GAA) <!-- Replace with actual image link -->
 
