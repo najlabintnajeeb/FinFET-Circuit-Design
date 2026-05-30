@@ -64,6 +64,116 @@ This portfolio covers the critical transition from **Planar MOSFETs** to **FinFE
 
 ## 📊 Performance Impact
 
+# 📊 Impact on Circuit Performance  
+**Planar vs Tri-Gate (FinFET) Transistors**
+
+> *How the transition to FinFETs solved critical power and performance bottlenecks in semiconductor scaling.*
+
+---
+
+## 🎯 Key Takeaways
+
+| Benefit                        | Planar MOSFET          | Tri-Gate FinFET          | Advantage |
+|-------------------------------|------------------------|---------------------------|---------|
+| **Off-Current (Leakage)**     | Higher                 | **Much Lower**            | Lower power dissipation |
+| **On-Current (Drive)**        | Lower (at same Ioff)   | **Higher**                | Better speed & performance |
+| **Subthreshold Swing**        | Poor                   | **Excellent**             | Sharper switching |
+| **Overall Circuit Efficiency**| Baseline               | **Significantly Better**  | Enables voltage scaling |
+
+---
+
+## 📈 Visual Comparison
+
+### 1. Lower Off-Current at Same On-Current
+
+![Lower Off-Current Graph](path/to/your/left-graph.png)
+
+<details>
+<summary>📌 Click to understand this graph</summary>
+
+**What you're seeing:**
+- Both transistors achieve similar **On-Current** at high gate voltage.
+- At low gate voltage (OFF state), the **Tri-Gate FinFET** shows **significantly lower leakage current**.
+- This directly translates to **lower static power dissipation**.
+
+**Real Benefit**: Reduced battery drain and heat generation in chips.
+</details>
+
+---
+
+### 2. Higher Drive Current at Same Off-Current
+
+![Higher Drive Current Graph](path/to/your/right-graph.png)
+
+<details>
+<summary>📌 Click to understand this graph</summary>
+
+**What you're seeing:**
+- Both curves have the **same low off-current** (same leakage).
+- When turned **ON**, the **Tri-Gate FinFET** delivers **much higher drive current**.
+- Result: Faster circuit operation at the same power budget.
+
+**Real Benefit**: Higher performance without increasing power consumption.
+</details>
+
+---
+
+## 🔍 Detailed Analysis
+
+<details>
+<summary><strong>📌 Why FinFETs outperform Planar Transistors</strong></summary>
+
+In planar transistors, the gate controls the channel only from the **top**. This leads to **sub-channel leakage** — current flowing deep in the silicon where the gate has poor control.
+
+FinFETs solve this by:
+- Raising the channel as a vertical **"Fin"**
+- Wrapping the gate around **three sides** (Tri-Gate)
+- Providing much stronger electrostatic control
+
+This results in:
+- Sharper turn-on/off behavior
+- Lower leakage
+- Better short-channel effect immunity
+</details>
+
+<details>
+<summary><strong>⚡ Performance & Power Benefits Explained</strong></summary>
+
+1. **Lower Leakage Current** → Reduces static power (`P_static = I_off × VDD`)
+2. **Higher On-Current** → Faster switching speed
+3. **Better Subthreshold Swing** → Closer to ideal 60 mV/decade
+4. **Voltage Scaling** → Can operate at lower VDD → Quadratic reduction in dynamic power (`P_dynamic ∝ CV²f`)
+</details>
+
+<details>
+<summary><strong>📊 Comparison Table (Technical)</strong></summary>
+
+| Parameter                    | Planar MOSFET              | Tri-Gate FinFET                  | Improvement |
+|-----------------------------|----------------------------|----------------------------------|-----------|
+| Gate Control                | 1 side                     | **3 sides**                      | Excellent |
+| Subthreshold Swing          | 80–100 mV/dec              | **60–70 mV/dec**                 | Near ideal |
+| Off-Current (Ioff)          | Higher                     | **10x+ lower**                   | Major     |
+| On-Current at same Ioff     | Lower                      | **Higher**                       | Performance boost |
+| Channel Doping              | Heavy (to control leakage) | **Undoped possible**             | Lower capacitance |
+| Scalability                 | Limited                    | **Excellent**                    | Enabled sub-22nm |
+</details>
+
+---
+
+## 💡 Real-World Impact
+
+<details>
+<summary>Click to see real-world applications</summary>
+
+- **Smartphones & Laptops**: Much better battery life
+- **Data Centers & Servers**: Lower cooling costs and power bills
+- **High-Performance CPUs/GPUs**: Higher clock speeds at manageable power
+- **Foundation for modern nodes**: 7nm, 5nm, 3nm chips heavily rely on this technology
+</details>
+
+---
+
+
 ### 1. Lower Off-Current at Same On-Current
 
 ![Left Graph](https://via.placeholder.com/500x400?text=Id-Vg+Planar+vs+FinFET)
@@ -78,7 +188,7 @@ This portfolio covers the critical transition from **Planar MOSFETs** to **FinFE
 
 ---
 
-## 📈 Key Metrics Improved
+##  Key Metrics Improved
 
 ### Subthreshold Swing (SS)
 
@@ -94,7 +204,7 @@ $$
 
 ---
 
-## 🎯 Key Advantages of FinFETs
+## Key Advantages of FinFETs
 
 - ✅ **Superior Gate Control** → Reduced short-channel effects
 - ✅ **Lower Leakage** → Excellent for mobile/low-power chips
@@ -135,11 +245,7 @@ FinFET technology (introduced by Intel in 2011) powered:
 
 ---
 
-## ✨ Interactive Elements (GitHub + Obsidian)
 
-- [ ] Add 3D interactive FinFET model (using GitHub Pages + Three.js)
-- [ ] Embed animated Id-Vg curve comparison
-- [ ] Quiz: "What problem does the fin solve?"
 
 ---
 
