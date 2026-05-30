@@ -12,6 +12,9 @@ This lecture maps how semiconductor technology has evolved across **six key dime
 
 > **Key insight:** The industry has shifted from purely geometric scaling (Moore's Law) to a multi-axis optimisation where progress in one dimension often enables — or demands — changes in others.
 
+
+![CMOS Evolution and Next-Gen Candidates](Images/cmos_evolution_diagram.png)
+*Source: Daewon Ha, Energy-efficient CMOS scaling for 1nm and beyond, IEDM 2022*
 ---
 
 ## 1. Patterning
