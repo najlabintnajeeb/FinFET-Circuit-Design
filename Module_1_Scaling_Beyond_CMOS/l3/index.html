@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FinFET Evolution Interactive Lab</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+  <h1>⚡ CMOS Evolution: Planar → FinFET → GAA</h1>
+  <p>Interactive visualization of modern transistor scaling</p>
+</header>
+
+<section class="slider-section">
+
+  <h2>🧬 Device Evolution Slider</h2>
+
+  <div class="slider-container">
+
+    <input type="range" min="0" max="2" value="0" id="deviceSlider">
+
+    <div class="device-display">
+
+      <img id="deviceImage" src="assets/planar.png">
+
+      <h3 id="deviceTitle">Planar MOSFET</h3>
+
+      <p id="deviceDesc">
+        Gate controls only top surface → weak electrostatic control
+      </p>
+
+    </div>
+  </div>
+
+</section>
+
+<section class="physics">
+
+  <h2>⚡ Why FinFET Wins</h2>
+
+  <div class="card">
+    <h3>Leakage Control</h3>
+    <p id="leakageText">High sub-channel leakage in planar devices</p>
+  </div>
+
+  <div class="card">
+    <h3>Gate Control</h3>
+    <p id="gateText">Single-side control → weak electrostatics</p>
+  </div>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
