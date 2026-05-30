@@ -3,102 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interactive FinFET 3D Model</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <title>Id-Vg Curve Comparison</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <style>
-    body { margin: 0; background: #0f172a; color: white; font-family: Arial, sans-serif; }
-    #info {
-      position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.7);
-      padding: 12px; border-radius: 8px; max-width: 300px;
-    }
+    body { margin: 20px; background: #0f172a; color: white; font-family: Arial; }
+    .container { max-width: 900px; margin: auto; }
   </style>
 </head>
 <body>
-  <div id="info">
-    <h2>Interactive FinFET</h2>
-    <p>Drag to rotate • Scroll to zoom</p>
-    <p><strong>Fin (Channel)</strong> • <strong>Gate</strong> wraps 3 sides</p>
+  <div class="container">
+    <h2>Planar vs Tri-Gate (FinFET) - I<sub>d</sub>-V<sub>g</sub> Characteristics</h2>
+    <canvas id="idvgChart" height="400"></canvas>
   </div>
 
   <script>
-    let scene, camera, renderer;
-    let fin, gate;
-
-    function init() {
-      scene = new THREE.Scene();
-      camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-      renderer = new THREE.WebGLRenderer({ antialias: true });
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      document.body.appendChild(renderer.domElement);
-
-      // Lights
-      const ambient = new THREE.AmbientLight(0xffffff, 0.6);
-      scene.add(ambient);
-      const directional = new THREE.DirectionalLight(0x00aaff, 1);
-      directional.position.set(5, 10, 7);
-      scene.add(directional);
-
-      // Fin (Channel) - Vertical Silicon Fin
-      const finGeometry = new THREE.BoxGeometry(0.4, 2.5, 0.2);
-      const finMaterial = new THREE.MeshPhongMaterial({ color: 0x44ff88, shininess: 30 });
-      fin = new THREE.Mesh(finGeometry, finMaterial);
-      scene.add(fin);
-
-      // Gate (wraps around fin)
-      const gateGeometry = new THREE.BoxGeometry(1.2, 1.8, 0.8);
-      const gateMaterial = new THREE.MeshPhongMaterial({ 
-        color: 0x8888ff, 
-        transparent: true, 
-        opacity: 0.85 
-      });
-      gate = new THREE.Mesh(gateGeometry, gateMaterial);
-      gate.position.y = 0.3;
-      scene.add(gate);
-
-      // Source & Drain
-      const sdGeometry = new THREE.BoxGeometry(0.6, 0.8, 0.6);
-      const sdMaterial = new THREE.MeshPhongMaterial({ color: 0xff6666 });
-      const source = new THREE.Mesh(sdGeometry, sdMaterial);
-      source.position.set(-1.2, -0.8, 0);
-      scene.add(source);
-
-      const drain = new THREE.Mesh(sdGeometry, sdMaterial);
-      drain.position.set(1.2, -0.8, 0);
-      scene.add(drain);
-
-      camera.position.set(0, 1, 5);
-      camera.lookAt(0, 0, 0);
-
-      // Mouse controls (simple orbit)
-      let isDragging = false;
-      let previousMouseX = 0;
-      window.addEventListener('mousedown', () => isDragging = true);
-      window.addEventListener('mouseup', () => isDragging = false);
-      window.addEventListener('mousemove', (e) => {
-        if (isDragging) {
-          fin.rotation.y += (e.clientX - previousMouseX) * 0.005;
-          gate.rotation.y += (e.clientX - previousMouseX) * 0.005;
+    const ctx = document.getElementById('idvgChart');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+        datasets: [
+          {
+            label: 'Planar MOSFET',
+            data: [0.00001, 0.0001, 0.001, 0.01, 0.08, 0.25, 0.45, 0.65, 0.8, 0.9, 0.95],
+            borderColor: '#3b82f6',
+            tension: 0.4,
+            borderWidth: 3
+          },
+          {
+            label: 'Tri-Gate FinFET',
+            data: [0.000001, 0.00001, 0.0001, 0.005, 0.12, 0.45, 0.75, 0.92, 0.98, 0.99, 1.0],
+            borderColor: '#22c55e',
+            tension: 0.4,
+            borderWidth: 3
+          }
+        ]
+      },
+      options: {
+        animation: { duration: 2500, easing: 'easeOutQuart' },
+        scales: {
+          y: { type: 'logarithmic', title: { display: true, text: 'Drain Current (A)' } },
+          x: { title: { display: true, text: 'Gate Voltage (V)' } }
+        },
+        plugins: {
+          legend: { position: 'top' },
+          title: { display: true, text: 'Better Subthreshold Swing + Lower Leakage in FinFET' }
         }
-        previousMouseX = e.clientX;
-      });
-
-      window.addEventListener('resize', () => {
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-      });
-
-      animate();
-    }
-
-    function animate() {
-      requestAnimationFrame(animate);
-      fin.rotation.y += 0.002;
-      gate.rotation.y += 0.002;
-      renderer.render(scene, camera);
-    }
-
-    init();
+      }
+    });
   </script>
 </body>
 </html>
