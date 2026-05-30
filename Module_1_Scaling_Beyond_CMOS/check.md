@@ -2,7 +2,7 @@
 
 ![Module](https://img.shields.io/badge/Module_1-Scaling_Beyond_CMOS-0d1117?style=plastic&labelColor=4fa3e3&color=0d1117)
 ![Lecture](https://img.shields.io/badge/Lecture-L2_of_9-0d1117?style=plastic&labelColor=f5a623&color=0d1117)
-![Status](https://img.shields.io/badge/Status-Complete-0d1117?style=plastic&labelColor=7ed321&color=0d1117)
+![Topics](https://img.shields.io/badge/Topics-Patterning_%C2%B7_FinFET_%C2%B7_DTCO-0d1117?style=plastic&labelColor=7ed321&color=0d1117)
 
 # L2 — CMOS Evolution and Next-Gen Candidates
 
@@ -28,31 +28,22 @@
 
 ## Summary
 
-This lecture explores the six major dimensions of CMOS evolution:
-
-1. Patterning
-2. Channel Materials
-3. Interconnect Technology
-4. Gate Stacks
-5. Device Architectures
-6. DTCO / STCO
-
-Each dimension follows a **Past → Now → Next** progression, illustrating how the semiconductor industry continues scaling beyond traditional Moore's Law limits.
-
-> Scaling is no longer about making transistors smaller. It is about optimising the entire technology stack.
+Modern chip scaling is a coordinated advance across six dimensions — not a single lever. This lecture maps each dimension on a timeline from established technology to future candidates, showing how lithography, materials, device geometry, and system architecture are all evolving in parallel. The key insight is that progress in one axis often enables or demands change in another: a new transistor architecture needs a new gate stack; a new gate stack needs new patterning; new patterning enables new interconnect. Together, these six axes form the roadmap from today's 5 nm node to the 1 nm era and beyond.
 
 ---
 
 ## The Six Dimensions
 
-| Dimension | Past | Now | Next |
-|------------|------|------|------|
-| Patterning | KrF / ArF | EUV | High-NA EUV |
-| Channel | Silicon | SiGe | 2D Materials |
-| Interconnect | Al → Cu | Cu | Ru / Compound Metals |
-| Gate Stack | SiO₂ | HKMG | Ferroelectric |
-| Device | Planar / FinFET | GAA | CFET |
-| DTCO | DDB/SDB | BS-PDN | Backside Signalling |
+```
+←————————————————————————————————————————————————→
+Past              NOW                          1nm
+KrF / ArF    →   EUV        →   High-NA EUV       Patterning
+Si           →   SiGe       →   2D Materials       Channel
+Al → Cu      →   Cu         →   Ru / Compounds     Interconnect
+SiO₂         →   HKMG       →   Ferroelectric      Gate Stack
+Planar       →   GAA        →   CFET               Device
+DDB/SDB      →   BS-PDN     →   BS Signalling      DTCO
+```
 
 ---
 
