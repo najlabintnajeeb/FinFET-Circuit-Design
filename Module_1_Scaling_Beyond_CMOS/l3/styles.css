@@ -20,7 +20,19 @@ input[type="range"] {
   width: 60%;
   margin: 20px;
 }
+.curve-section {
+  text-align: center;
+  padding: 40px;
+}
 
+canvas {
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  height: 300px;
+}
 .device-box {
   margin-top: 30px;
   transition: all 0.5s ease-in-out;
