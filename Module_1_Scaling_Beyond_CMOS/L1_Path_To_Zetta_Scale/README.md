@@ -1,352 +1,162 @@
-# 🔬 L1 — Path to Zetta-Scale Computing
-
 <div align="center">
 
-![Module](https://img.shields.io/badge/Module-1%3A%20Scaling%20Beyond%20CMOS-4fa3e3?style=for-the-badge&logoColor=white)
-![Lecture](https://img.shields.io/badge/Lecture-L1-f5a623?style=for-the-badge)
-![Topic](https://img.shields.io/badge/Topic-HPC%20Roadmap-7ed321?style=for-the-badge)
+# L1 — Path to Zetta-Scale Computing
 
-> *"Start with the problem and work backwards to the technology."*
+![Module](https://img.shields.io/badge/Module_1-Scaling_Beyond_CMOS-0d1117?style=flat-square&labelColor=4fa3e3&color=0d1117)
+![Lecture](https://img.shields.io/badge/Lecture-L1-0d1117?style=flat-square&labelColor=f5a623&color=0d1117)
+![Status](https://img.shields.io/badge/Status-Complete-0d1117?style=flat-square&labelColor=7ed321&color=0d1117)
 
-**From Turing's Bombe to a 10²¹ FLOPS zetta-scale supercomputer —**  
-this lecture traces the 80-year arc of computing, the forces that shaped it,  
-and the innovations needed to reach the next frontier.
+*Why the world needs a zettaflop — and what it will take to build one.*
 
----
-
-[📄 View Live Portfolio Page](https://najlabintnajeeb.github.io/FinFET-Circuit-Design/Module_1_Scaling_Beyond_CMOS/L1_Path_To_Zetta_Scale/L1_portfolio.html) &nbsp;·&nbsp;
-[🏠 Course Home](https://najlabintnajeeb.github.io/FinFET-Circuit-Design/) &nbsp;·&nbsp;
-[📁 Course Repo](https://github.com/najlabintnajeeb/FinFET-Circuit-Design)
+[📄 Portfolio Page](https://najlabintnajeeb.github.io/FinFET-Circuit-Design/Module_1_Scaling_Beyond_CMOS/L1_Path_To_Zetta_Scale/L1_portfolio.html) · [🏠 Course Home](../../README.md) · [→ Next Lecture](../L2_CMOS_Evolution_And_Next_Gen_Candidates/README.md)
 
 </div>
 
 ---
 
-## 📋 Lecture Overview
+## At a Glance
 
 | | |
-|---|---|
-| **Course** | FinFET & Circuit Design — 7nm Technology |
-| **Module** | Module 1: Scaling Beyond CMOS |
-| **Lecture** | L1 — Path to Zetta-Scale Computing |
-| **Sections** | 4 — History · Moore's Law · Rise of Mobile · HPC Roadmap |
-| **Key Concept** | Rack as a Socket · Zettaflop by ~2035 |
+|:--|:--|
+| **What** | History of computing + the roadmap to 10²¹ FLOPS |
+| **Why** | Next-gen problems (climate, medicine, physics) need compute that doesn't exist yet |
+| **How** | Moore's Law must continue — but through new vectors, not just shrinking |
+| **Key Concept** | Rack as a Socket — a data-centre rack treated as one compute unit |
+| **Target** | 1 Zettaflop by ~2035 · estimated 50–100 MW power |
 
 ---
 
-## 🗂️ Sections — Click to Expand
+## Summary
+
+Computing has always been problem-driven. From Turing's Bombe breaking the Enigma cipher to ENIAC modelling missile trajectories, each generation of hardware was built to solve a specific problem. Today, challenges like precision medicine, earthquake modelling, and room-temperature superconductors demand compute that is orders of magnitude beyond what exists. This lecture establishes *why* we need zetta-scale systems and traces the 80-year arc — through Moore's Law, the mobile inflection, and the HPC milestone race — that defines the path to get there.
 
 ---
+
+## Sections
 
 <details>
-<summary><h3>🖥️ Section 1 — Problems to Solve: Where Computing Began</h3></summary>
+<summary><strong>01 &nbsp;·&nbsp; Problems to Solve</strong> — where computing began and where it must go</summary>
 
 <br>
 
-> Computing has always been driven by a specific problem to solve — not the other way around.
+![Problems to Solve](images/slide-problems.png)
 
-![Problems to Solve Slide](images/slide-problems.png)
+Computing was never invented for its own sake — every major machine was built to crack a specific problem.
 
----
+| Machine | Era | Built To Solve |
+|:--|:--|:--|
+| **Bombe** | WWII | Break the Nazi Enigma cipher — mechanical, application-specific |
+| **ENIAC** | Post-War | Missile trajectory simulation — vacuum tubes, decimal system, Turing-complete |
+| **EDVAC** | Post-War | General computation — first binary system, von Neumann architecture |
+| **CMOS ENIAC** | 1995 | Demonstrated miniaturisation — entire ENIAC logic on a coin-sized chip |
 
-### 🏛️ Historical Machines
+All three early machines filled entire rooms. By 1995 the same logic fit on a chip smaller than a coin.
 
-| Machine | Era | Technology | Purpose |
-|---|---|---|---|
-| **Bombe** | WWII | Mechanical | Break Nazi Enigma cipher |
-| **ENIAC** | Post-War | Vacuum Tubes · Decimal | Missile trajectory simulation |
-| **EDVAC** | Post-War | Vacuum Tubes · Binary | First von Neumann architecture |
-| **CMOS ENIAC** | 1995 | CMOS chip | Full ENIAC on a coin-sized chip |
+**Next-generation problems** require orders of magnitude more compute than today's best systems — modelled from first principles:
 
-All three early machines shared one trait: they **occupied entire rooms**, required teams of people to programme, and were rewired to change tasks. By 1995, the same logic fit on a chip smaller than a coin.
-
----
-
-### 🌍 Next-Generation Problems
-
-These are the civilisation-scale challenges that demand zetta-scale compute — solved **from first principles**:
-
-| Problem | Why It Needs Zetta-Scale |
-|---|---|
-| 🌩️ Weather Modeling & Forecasting | Requires planet-scale fluid dynamics simulation |
-| 🧬 Health & Precision Medicine | Protein folding, genomic analysis at population scale |
-| 🌐 Earthquake Modeling | Real-time subsurface physics from first principles |
-| 💡 Room Temperature Superconductors | Quantum material discovery via simulation |
-| ⚛️ Next-Gen Semiconductors | Atomic-level device modelling |
-| 🔬 Virtual Particle Accelerators | Replace physical accelerators with simulation |
-| 🌍 Validate Fundamental Laws of Nature | First-principles verification of physics constants |
-| 💧 Earth Water Cycle | Climate modelling at full resolution |
+`Weather Forecasting` · `Precision Medicine` · `Earthquake Modelling` · `Room-Temperature Superconductors` · `Virtual Particle Accelerators` · `Earth Water Cycle` · `Fundamental Physics Validation` · `Next-Gen Semiconductors`
 
 </details>
 
 ---
 
 <details>
-<summary><h3>📈 Section 2 — 50 Years of Microprocessor Trend Data</h3></summary>
+<summary><strong>02 &nbsp;·&nbsp; 50 Years of Microprocessor Trend Data</strong> — what Moore's Law actually looks like</summary>
 
 <br>
 
-> Moore's Law isn't dead — but it's evolving. The next chapter is architectural, not just physical.
+![50 Years Overview](images/slide-50years-overview.png)
 
-![50 Years Microprocessor Overview](images/slide-50years-overview.png)
+![50 Years Annotated](images/slide-50years-annotated.png)
 
-![50 Years Microprocessor Annotated](images/slide-50years-annotated.png)
+Five curves tell the full story:
 
----
+| Metric | Trend | Reason |
+|:--|:--|:--|
+| 🟠 Transistors | Still exponential | Process node shrinking continues |
+| 🟢 Frequency | Plateaued ~2005 at 1–5 GHz | Thermal wall — can't cool fast enough |
+| 🔴 Power | Saturated at 100–125W | Mobile dominance locked in low-power design |
+| ⚫ Logical Cores | Rising — 2 → 100+ | Parallelism replaced clock speed as scaling vector |
+| 🔵 Single-Thread Perf | Improving, but slowly | IPC gains, not frequency |
 
-### 📊 What the Data Shows
+**The iPhone effect** — the 2007 launch crossed over PC sales by ~2010. With 1.4B smartphones shipped annually vs ~289M PCs, mobile redefined the industry's design priorities for over a decade. No active cooling meant power efficiency became the primary metric — directly suppressing frequency growth.
 
-<details>
-<summary><b>🟠 Transistors (thousands) — Still exponential</b></summary>
-
-<br>
-
-Transistor counts continue their exponential trajectory with no sign of flattening — from thousands in the 1970s to **tens of billions** today. This is the core of Moore's Law.
-
-- 1970s: ~1,000 transistors
-- 2000s: ~100 million transistors  
-- 2020s: 10–80 **billion** transistors per chip
-
-</details>
-
-<details>
-<summary><b>🟢 Frequency (MHz) — Plateaued ~2005</b></summary>
-
-<br>
-
-Clock speeds stagnated between **1–5 GHz** and have barely moved in 20 years.
-
-**Why?** The **thermal wall** — chips cannot be cooled fast enough to sustain further clock increases without burning out. Heat dissipation, not transistor physics, is the ceiling.
-
-</details>
-
-<details>
-<summary><b>🔴 Typical Power (Watts) — Saturated at 100–125W</b></summary>
-
-<br>
-
-Chip power plateaued at **~100–125W** for desktop processors. 
-
-The 2007 iPhone launch dramatically accelerated this: mobile devices have **no active cooling**, so the entire industry pivoted to performance-per-watt as the primary metric. This suppressed frequency growth across the board.
-
-</details>
-
-<details>
-<summary><b>⚫ Logical Cores — The new scaling vector</b></summary>
-
-<br>
-
-Since frequency couldn't grow, manufacturers added **more cores**:
-
-- 2005: Dual-core (Core 2 Duo)
-- 2010s: 4–8 cores mainstream
-- 2020s: **50–100 cores** on a single chip
-
-Parallelism replaced clock speed as the primary performance driver.
-
-</details>
-
-<details>
-<summary><b>🔵 Single-Thread Performance — Still improving, but slower</b></summary>
-
-<br>
-
-Single-thread performance (SpecINT) continues to improve — but driven by **IPC improvements**, deeper pipelines, smarter cache hierarchies, and microarchitectural innovation rather than raw frequency.
+> Moore's Law is expected to continue — but using **new ways**: FinFET scaling, Gate-All-Around transistors, 3D stacking, advanced packaging, chiplet architectures.
 
 </details>
 
 ---
 
-### 💡 Key Takeaway
+<details>
+<summary><strong>03 &nbsp;·&nbsp; Rise of Mobile</strong> — the market shift that redirected semiconductor R&D</summary>
+
+<br>
+
+![Rise of Mobile](images/slide-rise-of-mobile.png)
+
+| Year | PC Shipments | Smartphone Shipments |
+|:--|:--|:--|
+| 2007 (iPhone launch) | 271 million | 124 million |
+| ~2010 | 289 million | **Crossed over** |
+| ~2015 | 289 million | **1.4 billion** |
+
+*Source: Gartner, IDC, Apple*
+
+Mobile devices carry no fans or heatsinks. Every excess watt becomes heat against the user's hand. This single constraint — more than any other — explains why CPU frequency stagnated, why power-per-watt became the dominant metric, and why FinFET architecture was developed: a transistor architecture built around leakage control and efficiency, not raw speed.
+
+</details>
+
+---
+
+<details>
+<summary><strong>04 &nbsp;·&nbsp; HPC Roadmap: Giga → Zetta</strong> — the milestone race and what comes next</summary>
+
+<br>
+
+![HPC Roadmap](images/slide-zetta-roadmap.png)
+
+Each step is a **1000× leap** in compute. The race from gigaflop to zettaflop spans five decades:
 
 ```
-Expect Moore's Law to continue — but using NEW ways:
-FinFET scaling · GAA transistors · 3D stacking · Advanced packaging · Chiplets
+1984          1997          2008          2021          ~2035
+│             │             │             │             │
+Giga          Tera          Peta          Exa           ZETTA
+10⁹           10¹²          10¹⁵          10¹⁸          10²¹ FLOPS
+│◄─ 13 yrs ──►│◄─ 9 yrs ───►│◄──── 14 yrs ────►│◄─ ?? ──►│
 ```
 
-</details>
+| System | Year | Performance | Power | Notable |
+|:--|:--|:--|:--|:--|
+| Jaguar (Cray XT5) | 2008 | 2.3 PF | 7 MW | First petaflop · AMD CPU |
+| Titan (Cray XK6) | 2012 | 27 PF | 9 MW | First major GPU supercomputer |
+| Summit (IBM) | 2018 | 200 PF | 13 MW | 6 NVIDIA GPUs per node |
+| **Frontier** (Cray Shasta) | **2021** | **1,500 PF** | **29 MW** | **First true exaflop** |
+| **Zetta Target** | **~2035** | **10²¹ FLOPS** | **50–100 MW** | **Rack as a Socket** |
 
----
+**Zetta target specs:**
 
-<details>
-<summary><h3>📱 Section 3 — Rise of Mobile: The Market Inflection That Changed Everything</h3></summary>
+- FP64 / FP32: 1 Zettaflop each
+- BF16 / Int8 peak: 8–16 Zettaflop
+- Two trajectories: HPC path (2× /year) vs Industry standard (2× / 2 years)
 
-<br>
-
-> A single product launch in 2007 redirected the trajectory of an entire industry.
-
-![Rise of Mobile Slide](images/slide-rise-of-mobile.png)
-
----
-
-### 📉 The Crossover
-
-| Year | PC Units Shipped | Smartphone Units Shipped |
-|---|---|---|
-| 2007 (iPhone launch) | ~271 million | ~124 million |
-| ~2010 | ~289 million | **crossed over** |
-| ~2015 | ~289 million | **1.4 billion** |
-
-Source: Gartner, IDC, Apple
-
----
-
-### ⚡ Why This Mattered for Semiconductors
-
-<details>
-<summary><b>No active cooling → power became the #1 constraint</b></summary>
-
-<br>
-
-Mobile devices have no fans, no heatsinks, no liquid cooling. Every watt of excess power becomes heat trapped against a user's hand. This forced chip designers to treat **power efficiency as the primary design axis** — not raw performance.
-
-</details>
-
-<details>
-<summary><b>Frequency suppressed by mobile dominance</b></summary>
-
-<br>
-
-Had the PC market remained dominant, chip TDPs might have pushed past 100W toward 200–300W envelopes with proportionally higher frequencies. Instead, the mobile crossover locked the industry into a low-power paradigm for over a decade.
-
-</details>
-
-<details>
-<summary><b>Technology definition moved from desktop to mobile</b></summary>
-
-<br>
-
-The process nodes, transistor architectures (FinFET was driven heavily by mobile needs), and IP blocks that defined each generation from ~2010 onward were shaped primarily by **Apple, Qualcomm, and ARM** — not Intel or AMD.
-
-</details>
+**Rack as a Socket** — the architectural concept driving zetta-scale. Rather than measuring a single chip, an entire data-centre rack is treated as one unified compute socket, combining thousands of chips, accelerators, and memory units. Achieving this requires advances across every layer of the stack — from transistor geometry to system interconnect.
 
 </details>
 
 ---
 
-<details>
-<summary><h3>🚀 Section 4 — HPC Roadmap: Giga → Tera → Peta → Exa → Zetta</h3></summary>
+## Key Takeaway
 
-<br>
-
-> Each milestone is a 1000× leap in compute. The concept driving the next leap: **Rack as a Socket**.
-
-![Path to Zetta-Scale Slide](images/slide-zetta-roadmap.png)
+> The path to zetta-scale is not a single breakthrough — it is the **compounding of many**: continued transistor scaling (FinFET → GAA), 3D integration, advanced packaging, and rack-scale system architecture. The problems worth solving demand it.
 
 ---
 
-### 📅 Milestone Timeline
-
-```
-1984 ──────────── 1997 ──────── 2008 ─────────────────── 2021 ──────────────── ~2035
-Giga              Tera          Peta                      Exa                  ZETTA
-10⁹ FLOPS         10¹² FLOPS    10¹⁵ FLOPS                10¹⁸ FLOPS           10²¹ FLOPS
-                  ◄──13 yrs──►  ◄────9 yrs────►           ◄──────14 yrs──────► ◄── ?? ──►
-```
-
----
-
-### 🖥️ Key Systems
-
-<details>
-<summary><b>Jaguar — Cray XT5 (2008) · First Petaflop</b></summary>
-
-| Spec | Value |
-|---|---|
-| Performance | 2.3 PF |
-| Processor | AMD CPU |
-| Power | 7 MW |
-| Time to milestone | 9 years from teraflop |
-
-</details>
-
-<details>
-<summary><b>Titan — Cray XK6 (2012) · First Major GPU Supercomputer</b></summary>
-
-| Spec | Value |
-|---|---|
-| Performance | 27 PF |
-| Accelerator | NVIDIA GPU |
-| Processor | AMD CPU |
-| Power | 9 MW |
-
-</details>
-
-<details>
-<summary><b>Summit — IBM (2018) · Pre-Exascale Peak</b></summary>
-
-| Spec | Value |
-|---|---|
-| Performance | 200 PF |
-| GPUs/node | 6 × NVIDIA |
-| CPUs/node | 2 × Power CPU |
-| Power | 13 MW |
-
-</details>
-
-<details>
-<summary><b>Frontier — Cray Shasta (2021) · First Exaflop ✅</b></summary>
-
-| Spec | Value |
-|---|---|
-| Performance | 1,500 PF (1.5 EF) |
-| GPUs/node | 4 × AMD GPU |
-| CPUs/node | 1 × AMD CPU |
-| Power | 29 MW |
-| Time to milestone | 14 years from petaflop |
-
-</details>
-
-<details>
-<summary><b>🟠 Zetta Target (~2035) · The Goal</b></summary>
-
-| Spec | Value |
-|---|---|
-| FP64 Performance | 1 Zettaflop |
-| FP32 Performance | 1 Zettaflop |
-| BF16 / Int8 Peak | 8–16 Zettaflop |
-| Estimated Power | 50–100 MW |
-| Architecture | Rack as a Socket |
-
-**Two scenarios to get there:**
-- 🔶 HPC-optimised path: **2× every year**
-- ⬜ Industry standard: **2× every 2 years**
-
-</details>
-
----
-
-### 🔑 Key Concept: Rack as a Socket
-
-> Instead of measuring a single chip's performance, the zetta-scale paradigm treats an **entire data-centre rack as a single compute socket** — combining thousands of chips, accelerators, and memory units into one unified compute unit.
-
-This requires breakthroughs in:
-- **Front-end of line** — FinFET scaling, Gate-All-Around (GAA) transistors
-- **Back-end of line** — interconnect density, power delivery
-- **Packaging** — 3D stacking, chiplets, co-packaged optics
-- **System architecture** — NVLink, UCIe, CXL interconnects
-
-</details>
-
----
-
-## 🗺️ What's Next
-
-| Lecture | Topic | Status |
-|---|---|---|
-| **L1** | Path to Zetta-Scale Computing | ✅ Complete |
-| **L2** | FinFETs & Front-End of Line Innovations | 🔜 Coming |
-| **L3** | Back-End of Line Innovations | 🔜 Coming |
-| **L4** | Putting It All Together | 🔜 Coming |
-
----
-
-## 📁 Files in This Folder
+## Files
 
 ```
 L1_Path_To_Zetta_Scale/
-├── README.md                  ← You are here
-├── L1_portfolio.html          ← Live portfolio page
+├── README.md
+├── L1_portfolio.html
 └── images/
     ├── slide-problems.png
     ├── slide-50years-overview.png
@@ -359,7 +169,8 @@ L1_Path_To_Zetta_Scale/
 
 <div align="center">
 
-**FinFET Circuit Design · 7nm Technology Course**  
-[🔝 Back to Top](#-l1--path-to-zetta-scale-computing)
+[🏠 Course Home](../../README.md) &nbsp;·&nbsp; [→ L2 — CMOS Evolution](../L2_CMOS_Evolution_And_Next_Gen_Candidates/README.md)
+
+*FinFET Circuit Design · 7nm Technology*
 
 </div>
