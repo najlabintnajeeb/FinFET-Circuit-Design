@@ -1,175 +1,235 @@
+<div align="center">
+
+![Module](https://img.shields.io/badge/Module_1-Scaling_Beyond_CMOS-0d1117?style=plastic&labelColor=4fa3e3&color=0d1117)
+![Lecture](https://img.shields.io/badge/Lecture-L2_of_9-0d1117?style=plastic&labelColor=f5a623&color=0d1117)
+![Topics](https://img.shields.io/badge/Topics-Patterning_%C2%B7_FinFET_%C2%B7_DTCO-0d1117?style=plastic&labelColor=7ed321&color=0d1117)
+
 # L2 — CMOS Evolution and Next-Gen Candidates
 
-**Course:** FinFET Circuit Design and Characterization
-**Module:** 1 — Scaling Beyond CMOS: FinFET Devices and Innovations
-**Lecture:** 2 of 9
+*Chip scaling is no longer just about shrinking transistors — it is a coordinated push across six dimensions simultaneously.*
+
+[📄 Portfolio Page](#) · [🏠 Course Home](../../README.md) · [← L1](../L1_Path_To_Zetta_Scale/README.md) · [→ L3](../L3_Introduction_To_FinFETs/README.md)
+
+</div>
 
 ---
 
-## Overview
+## At a Glance
 
-This lecture maps how semiconductor technology has evolved across **six key dimensions** — and where each is headed. Modern chip scaling is no longer just about shrinking transistor geometry. It is a coordinated push across lithography, materials science, device physics, process engineering, and system architecture — all advancing simultaneously.
-
-> **Key insight:** The industry has shifted from purely geometric scaling (Moore's Law) to a multi-axis optimisation where progress in one dimension often enables — or demands — changes in others.
-
-
-![CMOS Evolution and Next-Gen Candidates](Images/cmos_evolution_diagram.png)
-
-*Source: Daewon Ha, Energy-efficient CMOS scaling for 1nm and beyond, IEDM 2022*
-
----
-
-## 1. Patterning
-*Printing circuit features onto silicon using light*
-
-Patterning is the process of transferring a circuit design onto a silicon wafer using light. A shorter wavelength of light means finer, more precise features — like using a sharper pencil tip.
-
-| Era | Technology | What it means |
-|-----|-----------|---------------|
-| Past | **KrF — 248 nm** | First widely-used deep UV light source |
-| Past | **ArF — 193 nm** | Shorter wavelength; enabled smaller features |
-| Past | **Double Patterning (DPT) / Quad Patterning (QPT)** | When light couldn't shrink further, the same pattern was printed in 2 or 4 passes to halve/quarter the effective pitch |
-| **Now** | **EUV — 13.5 nm** | Fundamentally shorter wavelength; one EUV exposure replaces multiple older passes |
-| **Next** | **High-NA EUV** | Larger numerical aperture optics — like a higher-magnification lens — for even finer resolution |
-
-> **Why it matters:** Every generation of patterning directly determines the minimum size of transistors and wires that can be printed on a chip.
+| | |
+|:--|:--|
+| **What** | Six axes of semiconductor scaling — patterning, channel, interconnect, gate stack, device architecture, DTCO |
+| **Why** | Pure geometric shrinking has limits; every layer of the stack must co-evolve |
+| **How** | Each axis has a clear past → now → next trajectory toward the 1 nm era |
+| **Key Concept** | DTCO & STCO — design and system co-optimisation unlock area gains beyond transistor scaling |
+| **Source** | Daewon Ha, *Energy-efficient CMOS scaling for 1nm and beyond*, IEDM 2022 |
 
 ---
 
-## 2. Channel Material
-*The material through which current flows inside a transistor*
+## Summary
 
-The channel is the region of a transistor that switches on and off. The key property is **carrier mobility** — how fast electrons (NMOS) or holes (PMOS) move through it. Faster carriers = more drive current = faster, more efficient circuits.
+This lecture explores the six major dimensions of CMOS evolution:
 
-| Era | Material | What it means |
-|-----|---------|---------------|
+1. Patterning
+2. Channel Materials
+3. Interconnect Technology
+4. Gate Stacks
+5. Device Architectures
+6. DTCO / STCO
+
+   ![CMOS Evolution Diagram](Images/cmos_evolution_diagram.png)
+
+Each dimension follows a **Past → Now → Next** progression, illustrating how the semiconductor industry continues scaling beyond traditional Moore's Law limits.
+
+> Scaling is no longer about making transistors smaller. It is about optimising the entire technology stack.
+
+---
+
+## The Six Dimensions
+
+| Dimension | Past | Now | Next |
+|------------|------|------|------|
+| Patterning | KrF / ArF | EUV | High-NA EUV |
+| Channel | Silicon | SiGe | 2D Materials |
+| Interconnect | Al → Cu | Cu | Ru / Compound Metals |
+| Gate Stack | SiO₂ | HKMG | Ferroelectric |
+| Device | Planar / FinFET | GAA | CFET |
+| DTCO | DDB/SDB | BS-PDN | Backside Signalling |
+
+---
+
+## Sections
+
+<details>
+<summary><strong>01 · Patterning</strong> &nbsp;—&nbsp; printing circuit features onto silicon using light</summary>
+
+<br>
+
+A shorter wavelength of light means finer, more precise features — like using a sharper pencil tip.
+
+| Era | Technology | What It Means |
+|:--|:--|:--|
+| Past | KrF — 248 nm | First widely-used deep UV light source |
+| Past | ArF — 193 nm | Shorter wavelength; enabled smaller features |
+| Past | Double / Quad Patterning (DPT / QPT) | When wavelength couldn't shrink, the same pattern was printed in 2–4 passes to halve/quarter the effective pitch |
+| **Now** | **EUV — 13.5 nm** | One EUV exposure replaces multiple older passes; fundamentally sharper |
+| **Next** | **High-NA EUV** | Larger numerical aperture optics — higher magnification — for even finer resolution |
+
+> Every generation of patterning directly determines the minimum size of transistors and wires that can be printed on a chip.
+
+</details>
+
+---
+
+<details>
+<summary><strong>02 · Channel Material</strong> &nbsp;—&nbsp; the material through which current flows inside a transistor</summary>
+
+<br>
+
+The key property is **carrier mobility** — how fast electrons (NMOS) or holes (PMOS) move. Faster carriers = more drive current = faster, more efficient circuits.
+
+| Era | Material | What It Means |
+|:--|:--|:--|
 | Past | **Bulk Silicon** | Reliable and well-understood; foundational for decades |
-| Past | **Strained Silicon / Strained SiGe** | Physically stretching the crystal lattice makes carriers move faster — more current for the same voltage |
-| **Now** | **SiGe PFETs (TSMC 5 nm)** | Silicon-germanium alloy gives the p-type transistor a significant speed and efficiency boost |
-| **Next** | **2D Materials (e.g. MoS₂)** | Atomically thin sheets; silicon breaks down electrically below ~7 nm gate length — 2D materials keep working, demonstrated down to 1 nm gate length |
+| Past | **Strained Silicon / Strained SiGe** | Physically stretching the crystal lattice makes carriers move faster |
+| **Now** | **SiGe PFETs** (TSMC 5 nm) | Silicon-germanium alloy gives the p-type transistor a speed and efficiency boost |
+| **Next** | **2D Materials (e.g. MoS₂)** | Atomically thin sheets; silicon breaks down below ~7 nm gate length — 2D materials demonstrated down to 1 nm gate length |
+
+</details>
 
 ---
 
-## 3. Interconnection Material
-*The metal wires that link transistors together on a chip*
+<details>
+<summary><strong>03 · Interconnect Material</strong> &nbsp;—&nbsp; the metal wires linking transistors together</summary>
 
-After transistors are built, they must be connected by metal wires running through multiple layers above the silicon. The key property is **resistivity** — lower resistance means less power wasted and faster signal travel.
+<br>
 
-| Era | Material | Process | What it means |
-|-----|---------|---------|---------------|
-| Past | **Aluminium (Al)** | Subtractive etch — pattern then remove | Simple but resistance climbs steeply as wire width shrinks |
-| Past | **Copper (Cu)** introduced at 180 nm | Dual damascene — dig trenches, fill with Cu, polish flat (CMP) | Lower resistivity than Al; Cu can't be etched so the process is inverted |
-| **Next** | **Ruthenium (Ru)** | Subtractive etch (like Al — simpler) | At very narrow line widths, Ru has lower resistance than Cu and avoids the complex damascene flow |
-| **R&D** | **Compound metals / Topological semi-metals** | — | Exotic conductors that may carry current with near-zero scattering at atomic scales |
+Transistors are connected by metal wires running through multiple layers above the silicon. The key property is **resistivity** — lower resistance means less power wasted and faster signal travel.
 
-> **What is CMP?** Chemical Mechanical Planarisation — a polishing step that grinds the wafer surface flat after filling metal into trenches.
+| Era | Material | Process | What It Means |
+|:--|:--|:--|:--|
+| Past | **Aluminium (Al)** | Subtractive etch | Simple; resistance climbs steeply as wire width shrinks |
+| Past | **Copper (Cu)** from 180 nm | Dual damascene — dig trenches, fill, polish (CMP) | Lower resistivity than Al; Cu can't be etched so the process is inverted |
+| **Next** | **Ruthenium (Ru)** | Subtractive etch (simpler than Cu) | At narrow widths, Ru has lower resistance than Cu |
+| **R&D** | **Topological semi-metals** | — | Near-zero electron scattering at atomic scales |
 
----
+**What is CMP?** Chemical Mechanical Planarisation — a polishing step that grinds the wafer surface flat after filling metal into trenches.
 
-## 4. Gate Stack
-*The insulating layer + electrode that controls the transistor switch*
-
-The gate stack sits directly above the channel. The **gate oxide** insulates the gate from the channel; the **gate electrode** applies the voltage that switches the transistor on or off. Thinner oxide = stronger gate control, but too thin causes leakage current.
-
-| Era | Gate Oxide | Gate Electrode | What changed |
-|-----|-----------|---------------|-------------|
-| Past | **SiO₂** (silicon dioxide) | **Polysilicon** | Classical combination; thermally grown SiO₂ |
-| Past | **Nitrided SiO₂ (SiON)** | Polysilicon | Adding nitrogen plugs defects and reduces leakage, extending the SiO₂ era |
-| **Now** | **High-k dielectric (e.g. HfO₂)** | **Metal gate** | High-k is physically thicker but electrically equivalent to ultra-thin SiO₂ — stops leakage. Metal gate replaces polysilicon for better conductivity. Introduced at 45 nm. |
-| **Now** | HKMG + **Dipole engineering** | Metal gate | Inserting thin interlayers at the oxide interface shifts the threshold voltage (Vt) without changing the oxide itself — allows multiple Vt flavours on one chip |
-| **Next** | **Ferroelectric oxides (NC-FET)** | Metal gate | Ferroelectrics have a negative capacitance effect that amplifies gate control — steeper switching with less voltage |
-
-> **What is Vt (threshold voltage)?** The minimum gate voltage needed to turn a transistor on. Different circuit blocks need different Vt values to balance speed and leakage.
+</details>
 
 ---
 
-## 5. Device Architecture
-*The 3D shape of the transistor itself*
+<details>
+<summary><strong>04 · Gate Stack</strong> &nbsp;—&nbsp; the insulating layer and electrode that control the transistor switch</summary>
+
+<br>
+
+The gate oxide insulates the gate from the channel; the gate electrode applies the voltage that switches the transistor on or off. Thinner oxide = stronger gate control, but too thin causes leakage.
+
+| Era | Gate Oxide | Gate Electrode | What Changed |
+|:--|:--|:--|:--|
+| Past | **SiO₂** | **Polysilicon** | Classical combination; thermally grown |
+| Past | **Nitrided SiO₂ (SiON)** | Polysilicon | Nitrogen plugs defects and reduces leakage |
+| **Now** | **High-k dielectric (HfO₂)** | **Metal gate (HKMG)** | Physically thicker but electrically equivalent to ultra-thin SiO₂ — stops leakage. Introduced at 45 nm. |
+| **Now** | HKMG + **Dipole engineering** | Metal gate | Thin interlayers shift threshold voltage (Vt) — multiple Vt flavours on one chip |
+| **Next** | **Ferroelectric oxides (NC-FET)** | Metal gate | Negative capacitance amplifies gate control — steeper switching with less voltage |
+
+**What is Vt?** Threshold voltage — the minimum gate voltage needed to turn a transistor on. Different circuit blocks need different Vt values to balance speed and leakage.
+
+</details>
+
+---
+
+<details>
+<summary><strong>05 · Device Architecture</strong> &nbsp;—&nbsp; the 3D shape of the transistor itself</summary>
+
+<br>
 
 As gate lengths shrink, the drain terminal starts influencing the channel even when the gate says "off" — called **short-channel effects**. Each architecture generation improves electrostatic control to suppress this.
 
-| Era | Architecture | Gate control | Key benefit |
-|-----|-------------|-------------|-------------|
-| Past | **Planar FET** | Gate on top only (1 side) | Simple; works at large sizes |
-| Past | **FinFET** | Gate wraps 3 sides of a vertical fin | Dramatically reduces short-channel effects; better on/off switching |
+| Era | Architecture | Gate Control | Key Benefit |
+|:--|:--|:--|:--|
+| Past | **Planar FET** | Gate on top only — 1 side | Simple; works at large sizes |
+| Past | **FinFET** | Gate wraps 3 sides of a vertical fin | Dramatically reduces short-channel effects |
 | **Now** | **Gate-All-Around (GAA) / Nanosheet FET** | Gate wraps all 4 sides of stacked nano-ribbons | Maximum electrostatic control; nanosheet width tunable for drive current |
-| **Next** | **CFET (Complementary FET)** | N and P transistors stacked vertically | Halves the standard-cell footprint — more logic per mm² without shrinking the transistor itself |
+| **Next** | **CFET (Complementary FET)** | N and P transistors stacked vertically | Halves the standard-cell footprint — more logic per mm² |
 
-> **What is a standard cell?** A pre-designed logic building block (AND gate, flip-flop, etc.) laid out to a fixed height. Reducing standard-cell area directly reduces chip area and cost.
+**What is a standard cell?** A pre-designed logic building block (AND gate, flip-flop, etc.) laid out to a fixed height. Reducing standard-cell area directly reduces chip area and cost.
 
----
-
-## 6. DTCO — Design-Technology Co-Optimisation
-*Process innovations that directly shrink circuit layout area*
-
-DTCO refers to changes in the fabrication process that are co-developed with circuit designers to reduce the area occupied by standard cells — without necessarily shrinking the transistor itself.
-
-| Era | Innovation | What it means |
-|-----|-----------|---------------|
-| Past | **Double Diffusion Break (DDB) → Single Diffusion Break (SDB)** | The isolation cut between adjacent transistors shrinks from double to single — recovering area without hurting isolation |
-| Past | **COAG** (Contact-Over-Active-Gate) | Gate contacts can now land directly over the active transistor area instead of outside it — frees routing space inside the cell |
-| **Now** | **Backside Power Delivery Network (BS-PDN)** | Power rails moved from the front (signal) side to the back of the wafer — front-side metal layers freed entirely for signals, reducing congestion and IR drop |
-| **Next** | **Backside Signalling** | Extends backside routing to signal nets alongside power — gives the chip a second wiring plane, dramatically improving routability |
+</details>
 
 ---
 
-## 7. STCO — System-Technology Co-Optimisation & Chiplets
-*Splitting a chip into smaller dies, each manufactured on its best-fit process*
+<details>
+<summary><strong>06 · DTCO & STCO</strong> &nbsp;—&nbsp; co-optimisation that shrinks circuits beyond transistor scaling</summary>
 
-Not every function on a chip benefits from the most advanced (and most expensive) process node. The **chiplet** approach partitions a system into separate dies that are then co-packaged.
+<br>
 
-| Integration | Description | What it means |
-|------------|-------------|---------------|
-| **Chiplets** | Separate dies for different functions (CPU, analog, I/O, memory) | Analogue circuits often work better on mature nodes; digital logic benefits from leading-edge. Each chiplet uses its optimal process. |
-| **2.5D Integration** | Dies placed side-by-side on a silicon or organic interposer | The interposer is a passive routing layer connecting chiplets with dense, short wires — much higher bandwidth than PCB traces |
-| **3D Integration** | Dies stacked vertically with Through-Silicon Vias (TSVs) | Shortens the path between compute and memory from millimetres to micrometres — large bandwidth and latency gains |
+**DTCO (Design-Technology Co-Optimisation)** — process changes developed jointly with circuit designers to reduce standard-cell area without necessarily shrinking the transistor itself.
 
-> **Analogy:** Think of chiplets like building a PC — CPU, GPU, and RAM are separate components. Chiplets do the same, but all in a single package with much shorter, faster connections between them.
+| Era | Innovation | What It Means |
+|:--|:--|:--|
+| Past | **Double → Single Diffusion Break (DDB → SDB)** | The isolation cut between adjacent transistors shrinks — recovering area without hurting isolation |
+| Past | **COAG** (Contact-Over-Active-Gate) | Gate contacts land directly over the active transistor area — frees routing space inside the cell |
+| **Now** | **Backside Power Delivery Network (BS-PDN)** | Power rails moved to the back of the wafer — front-side metal layers freed entirely for signals |
+| **Next** | **Backside Signalling** | Extends backside routing to signal nets — gives the chip a second full wiring plane |
 
----
+**STCO (System-Technology Co-Optimisation)** — splitting a chip into smaller dies, each on its best-fit process node.
 
-## Summary Diagram Reference
+| Integration | Description | Benefit |
+|:--|:--|:--|
+| **Chiplets** | Separate dies for CPU, analog, I/O, memory | Each function uses its optimal process node |
+| **2.5D** | Dies side-by-side on a silicon interposer | Dense, short connections — much higher bandwidth than PCB |
+| **3D** | Dies stacked vertically with TSVs | Shortens compute-to-memory path from mm to µm |
 
-The diagram from this lecture (*CMOS Evolution and Next-Gen Candidates*, Daewon Ha, IEDM 2022) maps all six dimensions on a single timeline from established technology on the left to future candidates on the right. "NOW" marks the current state-of-the-art; the rightmost arrow points toward the 1 nm era.
+> **Analogy:** Chiplets are like building a PC — CPU, GPU, RAM as separate components — but all in one package with much shorter, faster connections.
 
-```
-←————————————————————————————————————————————————→
-Past          NOW                              1nm
-KrF/ArF  →  EUV  →  High-NA EUV            [Patterning]
-Si       →  SiGe →  2D Materials            [Channel]
-Al → Cu  →  Cu   →  Ru / Compound Metals    [Interconnect]
-SiO₂     →  HKMG →  Ferroelectric           [Gate Stack]
-Planar   →  GAA  →  CFET                    [Device]
-DDB/SDB  →  BS-PDN→  BS Signalling          [DTCO]
-```
+</details>
 
 ---
 
 ## Key Terminology
 
 | Term | Meaning |
-|------|---------|
+|:--|:--|
 | **EUV** | Extreme Ultraviolet — 13.5 nm wavelength lithography |
 | **High-NA** | High Numerical Aperture — improved lens system for EUV |
-| **SiGe** | Silicon-Germanium alloy |
+| **SiGe** | Silicon-Germanium alloy channel material |
 | **HKMG** | High-k Metal Gate |
-| **HfO₂** | Hafnium dioxide — the standard high-k dielectric |
-| **NC-FET** | Negative Capacitance FET — uses ferroelectric gate oxide |
+| **HfO₂** | Hafnium dioxide — standard high-k dielectric |
+| **NC-FET** | Negative Capacitance FET — ferroelectric gate oxide |
 | **GAA** | Gate-All-Around transistor |
-| **CFET** | Complementary FET — stacked N+P |
-| **CMP** | Chemical Mechanical Planarisation — polishing step |
+| **CFET** | Complementary FET — stacked N+P transistors |
+| **CMP** | Chemical Mechanical Planarisation — wafer polishing step |
 | **DTCO** | Design-Technology Co-Optimisation |
 | **STCO** | System-Technology Co-Optimisation |
 | **BS-PDN** | Backside Power Delivery Network |
 | **TSV** | Through-Silicon Via — vertical electrical connection through a die |
-| **Vt** | Threshold voltage |
+| **Vt** | Threshold voltage — minimum gate voltage to turn transistor on |
 
 ---
 
-## Navigation
+## Key Takeaway
 
-| | Lecture |
-|---|---------|
-| ← Previous | [L1 — Path To Zetta Scale Computing](../L1_Path_To_Zetta_Scale/README.md) |
-| → Next | [L3 — Introduction To FinFETs](../L3_Introduction_To_FinFETs/README.md) |
-| ↑ Module | [Module 1 Overview](../../README.md#module-1) |
+> Chip scaling in the 1 nm era is a **six-axis problem**. Progress in patterning enables finer features; new channel materials restore drive current; new gate stacks prevent leakage; new device architectures restore electrostatic control; DTCO recovers area at the circuit level; STCO optimises the whole system. No single axis is sufficient alone.
+
+---
+
+## Files
+
+```
+L2_CMOS_Evolution_And_Next_Gen_Candidates/
+├── README.md
+└── Images/
+    └── cmos_evolution_diagram.png
+```
+
+---
+
+<div align="center">
+
+[← L1 — Path to Zetta-Scale](../L1_Path_To_Zetta_Scale/README.md) &nbsp;·&nbsp; [🏠 Course Home](../../README.md) &nbsp;·&nbsp; [→ L3 — Introduction to FinFETs](../L3_Introduction_To_FinFETs/README.md)
+
+*FinFET Circuit Design · 7nm Technology*
+
+</div>
