@@ -1,7 +1,7 @@
 
 # L3 — Introduction To FinFETs
 
-## 📌 Overview
+##  Overview
 
 This lecture covers the **critical transition** from traditional **Planar MOSFETs** to **FinFETs** (and the future **Gate-All-Around**), one of the most important innovations that allowed Moore’s Law to continue beyond the 22/28nm nodes.
 
@@ -10,7 +10,7 @@ FinFETs solved the fundamental **short-channel effects** and **leakage problems*
 
 ---
 
-## 🕰️ Transistor Evolution
+##  Transistor Evolution
 
 ### Timeline
 
