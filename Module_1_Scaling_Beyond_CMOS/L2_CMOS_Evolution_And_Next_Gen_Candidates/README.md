@@ -14,6 +14,7 @@ This lecture maps how semiconductor technology has evolved across **six key dime
 
 
 ![CMOS Evolution and Next-Gen Candidates](Images/cmos_evolution_diagram.png)
+
 *Source: Daewon Ha, Energy-efficient CMOS scaling for 1nm and beyond, IEDM 2022*
 
 ---
