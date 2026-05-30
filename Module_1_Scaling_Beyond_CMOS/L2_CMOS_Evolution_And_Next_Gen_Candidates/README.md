@@ -8,8 +8,6 @@
 
 *Chip scaling is no longer just about shrinking transistors — it is a coordinated push across six dimensions simultaneously.*
 
-[📄 Portfolio Page](#) · [🏠 Course Home](../../README.md) · [← L1](../L1_Path_To_Zetta_Scale/README.md) · [→ L3](../L3_Introduction_To_FinFETs/README.md)
-
 </div>
 
 ---
