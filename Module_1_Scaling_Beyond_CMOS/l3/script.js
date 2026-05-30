@@ -1,43 +1,52 @@
-const slider = document.getElementById("deviceSlider");
+const slider = document.getElementById("slider");
 
-const image = document.getElementById("deviceImage");
-const title = document.getElementById("deviceTitle");
-const desc = document.getElementById("deviceDesc");
+const img = document.getElementById("deviceImg");
+const title = document.getElementById("title");
+const desc = document.getElementById("desc");
 
-const leakageText = document.getElementById("leakageText");
-const gateText = document.getElementById("gateText");
+const leakage = document.getElementById("leakage");
+const gate = document.getElementById("gate");
+
+const box = document.getElementById("deviceBox");
+
+function animateChange() {
+  box.classList.add("fade");
+
+  setTimeout(() => {
+    box.classList.remove("fade");
+  }, 200);
+}
 
 slider.addEventListener("input", () => {
 
-  const value = parseInt(slider.value);
+  animateChange();
 
-  if (value === 0) {
-    // PLANAR
-    image.src = "assets/planar.png";
+  const v = parseInt(slider.value);
+
+  if (v === 0) {
+    img.src = "assets/planar.png";
     title.textContent = "Planar MOSFET";
-    desc.textContent = "Gate controls only top surface → weak electrostatic control";
+    desc.textContent = "Gate controls only top surface";
 
-    leakageText.textContent = "High sub-channel leakage due to weak control";
-    gateText.textContent = "Single-side gate control";
+    leakage.textContent = "High leakage due to weak control";
+    gate.textContent = "Single-side gate control";
   }
 
-  if (value === 1) {
-    // FINFET
-    image.src = "assets/finfet.png";
+  if (v === 1) {
+    img.src = "assets/finfet.png";
     title.textContent = "FinFET (Tri-Gate)";
-    desc.textContent = "Gate wraps 3 sides → strong electrostatic control";
+    desc.textContent = "Gate wraps 3 sides of channel";
 
-    leakageText.textContent = "Significantly reduced leakage";
-    gateText.textContent = "Multi-side gate control improves switching";
+    leakage.textContent = "Strongly reduced leakage";
+    gate.textContent = "Multi-side electrostatic control";
   }
 
-  if (value === 2) {
-    // GAA
-    image.src = "assets/gaa.png";
+  if (v === 2) {
+    img.src = "assets/gaa.png";
     title.textContent = "Gate-All-Around (GAA)";
-    desc.textContent = "Gate fully surrounds channel → maximum control";
+    desc.textContent = "Gate fully surrounds channel";
 
-    leakageText.textContent = "Minimal leakage (near ideal)";
-    gateText.textContent = "Full 360° gate control";
+    leakage.textContent = "Near-zero leakage";
+    gate.textContent = "Maximum electrostatic control";
   }
 });
