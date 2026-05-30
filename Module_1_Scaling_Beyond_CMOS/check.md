@@ -1,10 +1,10 @@
 <div align="center">
 
-# L2 — CMOS Evolution and Next-Gen Candidates
-
 ![Module](https://img.shields.io/badge/Module_1-Scaling_Beyond_CMOS-0d1117?style=flat-square&labelColor=4fa3e3&color=0d1117)
 ![Lecture](https://img.shields.io/badge/Lecture-L2_of_9-0d1117?style=flat-square&labelColor=f5a623&color=0d1117)
 ![Status](https://img.shields.io/badge/Status-Complete-0d1117?style=flat-square&labelColor=7ed321&color=0d1117)
+
+# L2 — CMOS Evolution and Next-Gen Candidates
 
 *Chip scaling is no longer just about shrinking transistors — it is a coordinated push across six dimensions simultaneously.*
 
@@ -122,7 +122,7 @@ The gate oxide insulates the gate from the channel; the gate electrode applies t
 | Past | **SiO₂** | **Polysilicon** | Classical combination; thermally grown |
 | Past | **Nitrided SiO₂ (SiON)** | Polysilicon | Nitrogen plugs defects and reduces leakage |
 | **Now** | **High-k dielectric (HfO₂)** | **Metal gate (HKMG)** | Physically thicker but electrically equivalent to ultra-thin SiO₂ — stops leakage. Introduced at 45 nm. |
-| **Now** | HKMG + **Dipole engineering** | Metal gate | Thin interlayers shift threshold voltage (Vt) without changing the oxide — multiple Vt flavours on one chip |
+| **Now** | HKMG + **Dipole engineering** | Metal gate | Thin interlayers shift threshold voltage (Vt) — multiple Vt flavours on one chip |
 | **Next** | **Ferroelectric oxides (NC-FET)** | Metal gate | Negative capacitance amplifies gate control — steeper switching with less voltage |
 
 **What is Vt?** Threshold voltage — the minimum gate voltage needed to turn a transistor on. Different circuit blocks need different Vt values to balance speed and leakage.
@@ -161,11 +161,11 @@ As gate lengths shrink, the drain terminal starts influencing the channel even w
 | Era | Innovation | What It Means |
 |:--|:--|:--|
 | Past | **Double → Single Diffusion Break (DDB → SDB)** | The isolation cut between adjacent transistors shrinks — recovering area without hurting isolation |
-| Past | **COAG** (Contact-Over-Active-Gate) | Gate contacts land directly over the active transistor area instead of outside it — frees routing space |
-| **Now** | **Backside Power Delivery Network (BS-PDN)** | Power rails moved to the back of the wafer — front-side metal layers freed entirely for signals, reducing congestion and IR drop |
+| Past | **COAG** (Contact-Over-Active-Gate) | Gate contacts land directly over the active transistor area — frees routing space inside the cell |
+| **Now** | **Backside Power Delivery Network (BS-PDN)** | Power rails moved to the back of the wafer — front-side metal layers freed entirely for signals |
 | **Next** | **Backside Signalling** | Extends backside routing to signal nets — gives the chip a second full wiring plane |
 
-**STCO (System-Technology Co-Optimisation)** — splitting a chip into smaller dies, each manufactured on its best-fit process node.
+**STCO (System-Technology Co-Optimisation)** — splitting a chip into smaller dies, each on its best-fit process node.
 
 | Integration | Description | Benefit |
 |:--|:--|:--|
