@@ -1,50 +1,55 @@
 body {
-  font-family: Arial, sans-serif;
-  background: #0f172a;
-  color: white;
   margin: 0;
-  padding: 0;
+  font-family: Arial;
+  background: #0b1220;
+  color: white;
 }
 
 header {
   text-align: center;
-  padding: 40px;
-  background: linear-gradient(90deg, #1e3a8a, #0f172a);
+  padding: 30px;
+  background: #111c33;
 }
 
-.slider-section {
-  padding: 40px;
+.panel {
   text-align: center;
-}
-
-.slider-container {
-  margin-top: 20px;
+  padding: 40px;
 }
 
 input[type="range"] {
   width: 60%;
+  margin: 20px;
 }
 
-.device-display {
+.device-box {
   margin-top: 30px;
+  transition: all 0.5s ease-in-out;
+  transform: scale(1);
+  opacity: 1;
+}
+
+.device-box img {
+  width: 260px;
   transition: all 0.5s ease-in-out;
 }
 
-.device-display img {
-  width: 300px;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
-}
-
-.physics {
+.metrics {
   display: flex;
-  justify-content: space-around;
-  padding: 50px;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px;
 }
 
 .card {
-  background: #1e293b;
+  background: #1c2a44;
   padding: 20px;
   border-radius: 12px;
-  width: 40%;
+  width: 250px;
+  transition: all 0.4s ease;
+}
+
+/* 🔥 visible animation trigger */
+.fade {
+  opacity: 0.3;
+  transform: scale(0.95);
 }
