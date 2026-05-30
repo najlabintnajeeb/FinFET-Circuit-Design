@@ -22,7 +22,7 @@ FinFETs solved the fundamental **short-channel effects** and **leakage problems*
 
 ### Visual Evolution
 
-![Transistor Evolution](https://najlabintnajeeb.github.io/FinFET-Circuit-Design/Module_1_Scaling_Beyond_CMOS/L3_Introduction_To_FinFETs/assets/transistor-evolution.png) <!-- Update with actual uploaded image path -->
+![Transistor Evolution](https://najlabintnajeeb.github.io/FinFET-Circuit-Design/Module_1_Scaling_Beyond_CMOS/L3_Introduction_To_FinFETs/Images/transistor-evolution.png) 
 
 **FinFET Innovation**:
 - Channel protrudes as a vertical **"Fin"**
@@ -33,7 +33,7 @@ FinFETs solved the fundamental **short-channel effects** and **leakage problems*
 
 ## ❓ Why FinFETs?
 
-![Why FinFETs?](https://najlabintnajeeb.github.io/FinFET-Circuit-Design/Module_1_Scaling_Beyond_CMOS/L3_Introduction_To_FinFETs/assets/why-finfets.png) <!-- Update path -->
+![Why FinFETs?](https://najlabintnajeeb.github.io/FinFET-Circuit-Design/Module_1_Scaling_Beyond_CMOS/L3_Introduction_To_FinFETs/Images/why-finfets.png) 
 
 ### Problems with Planar Transistors
 
@@ -75,8 +75,7 @@ Far from the ideal 60 mV/decade, resulting in slow switching and high leakage.
 
 ##  Performance Impact
 
-![Impact on Circuit Performance](https://najlabintnajeeb.github.io/FinFET-Circuit-Design/Module_1_Scaling_Beyond_CMOS/L3_Introduction_To_FinFETs/assets/performance-impact.png) <!-- Update path -->
-
+![Impact on Circuit Performance](https://najlabintnajeeb.github.io/FinFET-Circuit-Design/Module_1_Scaling_Beyond_CMOS/L3_Introduction_To_FinFETs/Images/performance-impact.png) 
 ### Key Takeaways
 
 | Benefit                        | Planar          | Tri-Gate FinFET     | Advantage                     |
