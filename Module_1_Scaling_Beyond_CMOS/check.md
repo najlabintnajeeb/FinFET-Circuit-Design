@@ -1,9 +1,7 @@
-![Module](https://img.shields.io/badge/Module-1%20%E2%80%94%20Scaling%20Beyond%20CMOS-6366f1?style=flat-square) &nbsp;![Lecture](https://img.shields.io/badge/Lecture-L3%20of%209-0ea5e9?style=flat-square) &nbsp;![Topics](https://img.shields.io/badge/Topics-FinFET%20%7C%20GAA%20%7C%20Leakage%20%7C%20Subthreshold%20Swing-10b981?style=flat-square)
+![Module](https://img.shields.io/badge/Module_1-Scaling_Beyond_CMOS-0d1117?style=plastic&labelColor=4fa3e3&color=0d1117) ![Lecture](https://img.shields.io/badge/Lecture-L3_of_9-0d1117?style=plastic&labelColor=f5a623&color=0d1117) ![Topics](https://img.shields.io/badge/Topics-FinFET_%C2%B7_GAA_%C2%B7_Leakage_%C2%B7_Subthreshold_Swing-0d1117?style=plastic&labelColor=7ed321&color=0d1117)
 
 # L3 — Introduction to FinFETs
-*How a vertical fin solved the leakage crisis that threatened to end Moore's Law.*
-
-[← Portfolio](../../README.md) &nbsp;·&nbsp; [⌂ Home](../../README.md) &nbsp;·&nbsp; [← L2](../L2_CMOS_Evolution_And_Next_Gen_Candidates/README.md) &nbsp;·&nbsp; [L4 →](../L4/README.md)
+*How a vertical fin restored electrostatic control and enabled CMOS scaling beyond planar limits.*
 
 ---
 
@@ -36,9 +34,15 @@ Planar MOSFETs dominated from the micron era down to ~28–32 nm, but shrinking 
 |---|---|---|---|
 | Planar | ~2000 → 2011 | Top only | Simple, but poor short-channel control at small nodes |
 | FinFET (tri-gate) | 2011 → ~2022 | Wraps 3 sides of vertical fin | Strong gate control; undoped channel possible |
-| Gate-All-Around (GAA) | 2025 + | Surrounds stacked nanosheets | Best possible electrostatics; width fully decoupled from footprint |
+| Gate-All-Around (GAA) | Modern advanced nodes | Surrounds stacked nanosheets | Successor to FinFET |
 
 In both FinFET and GAA architectures the electrical width — set by the fin perimeter or nanosheet stack — is **decoupled from the device footprint**. This means more drive current per unit of silicon area compared to a planar device at the same node, a critical advantage as interconnect RC delay becomes the dominant performance bottleneck.
+
+> 💡 **Why FinFETs deliver more current per area**
+>
+> In planar devices, increasing channel width increases footprint.
+> In FinFETs, current scales with the fin perimeter while footprint grows much more slowly.
+> This decoupling allows higher drive current density and becomes increasingly valuable as interconnect delays dominate modern chips.
 
 </details>
 
@@ -74,7 +78,7 @@ Multi-gate transistors raise C_ox and lower C_D simultaneously, so S approaches 
 | Same on-current | Higher I_off | **Much lower I_off** | Lower static (leakage) power |
 | Same off-current | Lower I_on | **Higher I_on** | Better switching speed |
 | Same supply voltage | Baseline | Higher drive current | Performance improvement |
-| Lower VDD possible | — | Equal drive current at reduced V_DD | Lower dynamic power (P ∝ CV²f) |
+| Lower VDD possible | — | Equal drive current at reduced V_DD | Lower dynamic power (P ∝ CV<sup>2</sup>f) |
 
 Real data from Intel's 22 nm tri-gate (vs 32 nm planar) showed subthreshold swing for logic transistors approaching the 60 mV/decade ideal, with significant improvement for high-voltage transistors as well. Tuning V_T allows a designer to choose between leakage reduction *or* performance uplift — a flexibility planar devices did not offer at equivalent nodes.
 
@@ -94,8 +98,17 @@ Real data from Intel's 22 nm tri-gate (vs 32 nm planar) showed subthreshold swin
 | **Band-to-band tunnelling** | Quantum leakage between heavily doped drain and substrate; worsens with aggressive doping |
 | **Fully depleted** | Channel body is entirely free of mobile carriers when the device is off; gate has complete control |
 | **Electrical width** | Effective channel width = fin perimeter (FinFET) or nanosheet perimeter × stack count (GAA) |
+| Electrostatic Control | Ability of the gate to control channel charge and suppress leakage |
 
 ---
+
+## Lecture Insights
+
+- FinFET is fundamentally an electrostatic solution, not just a geometry change.
+- Better gate control enables lower leakage and improved switching behavior.
+- Multi-gate architectures move subthreshold swing closer to the 60 mV/dec ideal.
+- GAA extends the same principle further by surrounding the channel on all sides.
+- As transistor performance improves, interconnect RC delay increasingly dominates system performance.
 
 ## Key takeaway
 
