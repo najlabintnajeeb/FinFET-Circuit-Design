@@ -22,7 +22,7 @@ Parasitic-driven variability
 
 ## 📌 Figure 1 — Fin Depopulation Based Cell Height Scaling
 
-<img width="953" height="511" alt="fin-depopulation" src="https://github.com/user-attachments/assets/be01a844-3d4d-4337-9522-30afa35963a3" />
+https://github.com/najlabintnajeeb/FinFET-Circuit-Design/blob/main/Module_1_Scaling_Beyond_CMOS/L5_Standard_Cell_Area_Scaling_And_Variability/images/fin-depopulation.png
 
 ---
 
