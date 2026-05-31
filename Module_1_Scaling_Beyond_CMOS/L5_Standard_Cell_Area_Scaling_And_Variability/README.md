@@ -1,8 +1,7 @@
 # L5 — Standard Cell Area Scaling And Variability
 
-**Course:** FinFET Circuit Design and Characterization  
-**Module:** Module 1 — Scaling Beyond CMOS  
-**Lecture:** 5 of 9  
+![Module](https://img.shields.io/badge/Module_2-Standard_Cells-blue) ![Lecture](https://img.shields.io/badge/Lecture-5_of_9-green) ![Topics](https://img.shields.io/badge/Topics-Area_Scaling_·_Variability_·_Parasitics-purple)
+ 
 
 ---
 
@@ -70,7 +69,7 @@ This figure focuses on **vertical scaling (cell height)** through fin depopulati
 
 ## 📌 Figure 2 — SDB, COAG, and Power Rail Scaling
 
-<img width="976" height="540" alt="sdb-coag-bs-pdn" src="https://github.com/user-attachments/assets/7ff6f241-dc3c-49c2-bbd3-3e2d133f396a" />
+[<img width="976" height="540" alt="sdb-coag-bs-pdn" src="https://github.com/user-attachments/assets/7ff6f241-dc3c-49c2-bbd3-3e2d133f396a" />](https://github.com/najlabintnajeeb/FinFET-Circuit-Design/edit/main/Module_1_Scaling_Beyond_CMOS/L5_Standard_Cell_Area_Scaling_And_Variability/README.md#:~:text=sdb%2Dcoag%2Dbs%2D-,pdn.png)
 
 ---
 
@@ -110,7 +109,7 @@ This figure focuses on **vertical scaling (cell height)** through fin depopulati
 
 ## 📌 Figure 3 — Device Variability Evolution
 
-<img width="986" height="529" alt="variability" src="https://github.com/user-attachments/assets/af467c9b-1699-458a-a887-8445c56e7d6a" />
+[<img width="986" height="529" alt="variability" src="https://github.com/user-attachments/assets/af467c9b-1699-458a-a887-8445c56e7d6a" />](https://github.com/najlabintnajeeb/FinFET-Circuit-Design/edit/main/Module_1_Scaling_Beyond_CMOS/L5_Standard_Cell_Area_Scaling_And_Variability/README.md#:~:text=variability.png)
 
 ---
 
@@ -148,8 +147,8 @@ Variability follows a non-monotonic trend across scaling:
 
 ## 📌 Figure 4 — Parasitic Variation
 
-<img width="986" height="529" alt="parasitic" src="https://github.com/user-attachments/assets/placeholder-parasitic.png" />
-
+[<img width="986" height="529" alt="parasitic" src="https://github.com/user-attachments/assets/placeholder-parasitic.png" />
+](https://github.com/najlabintnajeeb/FinFET-Circuit-Design/edit/main/Module_1_Scaling_Beyond_CMOS/L5_Standard_Cell_Area_Scaling_And_Variability/README.md#:~:text=parasitic%2D-,resistance.png)
 ---
 
 ## Concept
