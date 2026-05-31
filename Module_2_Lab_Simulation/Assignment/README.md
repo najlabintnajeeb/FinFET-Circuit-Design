@@ -1,9 +1,14 @@
 # Module 2 Assignment
 
 ASCII sum for “najla”
+
 110 + 97 + 106 + 108 + 97 = 518
+
 518 mV = 0.518 V
+
 Vuniq in 0 DC 0.518
+
+
 
 
 
