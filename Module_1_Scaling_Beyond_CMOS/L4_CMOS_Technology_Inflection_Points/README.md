@@ -11,11 +11,11 @@
 
 | | |
 |---|---|
-| **Lecture** | L4 — CMOS Technology Inflection Points |
-| **Core concept** | How device and process innovations enabled continued transistor scaling beyond Dennard limits |
-| **Key nodes** | ~1 μm → 180 nm → 90 nm → 45 nm → 22 nm → 5 nm → sub-1 nm |
-| **Key technologies** | Cu BEOL, strained Si, HKMG, FinFET, EUV, GAA, CFET, 2D FET |
-| **Linked content** | Slide deck (Images 1 & 2), lecture transcript |
+| **What** | A node-by-node history of CMOS innovations — materials, architecture, and lithography changes that kept scaling alive |
+| **Why** | Transistors couldn't just shrink — each node hit a physical wall that required a structural reinvention to continue |
+| **How** | Successive substitutions: better metals → strained channels → high-K dielectrics → 3D fins → gate-all-around |
+| **Key Concept** | Dennard Scaling Breakdown — once voltage couldn't track gate length, every node needed its own engineering solution |
+| **Target** | Sub-1 nm devices via GAA + CFET + 2D materials (MoS₂) · current frontier: 3/2/1.4 nm GAA nodes |
 
 ---
 
