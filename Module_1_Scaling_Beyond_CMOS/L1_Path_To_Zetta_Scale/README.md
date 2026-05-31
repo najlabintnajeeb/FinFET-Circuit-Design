@@ -93,7 +93,7 @@ Five curves tell the full story of five decades of silicon progress:
 
 <br>
 
-![Rise of Mobile](images/Rise of mobile.png)
+![Rise of Mobile](images/rise-of-mobile.png)
 
 | Year | PC Shipments | Smartphone Shipments |
 |:--|:--|:--|
