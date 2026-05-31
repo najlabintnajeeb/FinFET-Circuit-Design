@@ -1,32 +1,13 @@
 # Module 2 Assignment
 
-**Course:** FinFET Circuit Design and Characterization
-**Module:** Module 2 — Lab-to-Simulation
-**Status:** 📝 Notes coming soon
+ASCII sum for “najla”
+110 + 97 + 106 + 108 + 97 = 518
+518 mV = 0.518 V
+Vuniq in 0 DC 0.518
 
----
 
-## Overview
 
-> Notes for this lecture will be added here.
 
----
-
-## Topics Covered
-
-- [ ] Topic 1
-- [ ] Topic 2
-- [ ] Topic 3
-
----
-
-## Key Concepts
-
-*To be filled in after lecture.*
-
----
-
-## Navigation
 
 | | Lecture |
 |---|---------|
