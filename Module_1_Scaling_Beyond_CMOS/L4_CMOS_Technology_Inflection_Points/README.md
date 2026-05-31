@@ -25,6 +25,9 @@
 Bob Dennard (IBM) formalised constant electric field scaling as a roadmap methodology — predicting supply voltage and gate length at each generation. That roadmap held until ~250 nm, after which oxide thickness, interconnect RC, and transistor non-idealities forced a series of structural innovations at each node. Beginning at 90 nm, materials substitutions (Cu BEOL, strained Si, high-K metal gate) maintained performance scaling while managing leakage and resistance. From 22 nm onward, 3D transistor architectures — FinFET, then gate-all-around and eventually CFET — took over as the primary scaling lever, with lithography transitioning from multi-patterning to EUV.
 
 ---
+![CMOS Scaling Map](./images/image2_1um_32nm.png)
+
+![FinFET / GAA Transition](./images/image1_22nm_subnm.png)
 
 ## Scaling Constraint Evolution Map
 
@@ -287,6 +290,5 @@ FEOL and BEOL are co-optimised from 45 nm onward, not independently engineered.
 ---
 
 **[← L3](#)** · **[Home](#)** · **[L5 →](#)**
-```
 
 ---
