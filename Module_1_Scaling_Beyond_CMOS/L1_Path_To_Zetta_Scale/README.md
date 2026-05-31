@@ -39,7 +39,7 @@ Computing has always been problem-driven. From Turing's Bombe breaking the Enigm
 
 <br>
 
-![Problems to Solve](images/slide-problems.png)
+![Problems to Solve](images/problems.png)
 
 Computing was never invented for its own sake — every major machine was built to crack a specific problem.
 
@@ -65,9 +65,9 @@ All three early machines filled entire rooms. By 1995 the same logic fit on a ch
 
 <br>
 
-![50 Years Overview](images/slide-50years-overview.png)
+![50 Years Overview](images/50years-overview.png)
 
-![50 Years Annotated](images/slide-50years-annotated.png)
+![50 Years Annotated](images/50years-overview2.png)
 
 Five curves tell the full story of five decades of silicon progress:
 
@@ -93,7 +93,7 @@ Five curves tell the full story of five decades of silicon progress:
 
 <br>
 
-![Rise of Mobile](images/slide-rise-of-mobile.png)
+![Rise of Mobile](images/Rise-of-mobile.png)
 
 | Year | PC Shipments | Smartphone Shipments |
 |:--|:--|:--|
@@ -114,7 +114,7 @@ Mobile devices carry no fans or heatsinks. Every excess watt becomes heat trappe
 
 <br>
 
-![HPC Roadmap](images/slide-zetta-roadmap.png)
+![HPC Roadmap](images/zetta-roadmap.png)
 
 Each step is a **1,000× leap** in compute. The race from gigaflop to zettaflop spans five decades:
 
