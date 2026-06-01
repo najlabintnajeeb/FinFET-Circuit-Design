@@ -1,7 +1,58 @@
 # L4 — W/L Ratio, Vt, Power, Propagation Delay, Gain And Noise Margin
 
 
+## 2.1 W/L Ratio
 
+The W/L ratio directly controls a transistor's **current drive capability**, **switching speed**, and **power consumption** — making it one of the most important parameters in CMOS design.
+
+| Parameter | Value |
+|-----------|-------|
+| Technology node | 7 nm PDK |
+| Channel length (L) | **Fixed** at 7 nm |
+| Width (W) control | Varied via `nfins` (number of fins) |
+
+In FinFET-based 7 nm PDK, width is not continuous — it is quantised by the number of fins (`nfins`). Separate `nfins` values are swept for the NMOS (`nnmos`) and PMOS (`npmos`) to study how the ratio affects circuit behaviour.
+
+---
+
+## 2.2 Switching Threshold Voltage (V<sub>th</sub>)
+
+The switching threshold V<sub>th</sub> is the input voltage at which the output voltage equals the input voltage — the **midpoint of the voltage transfer curve (VTC)**.
+
+$$V_{th} : \quad V_{in} = V_{out}$$
+
+It is set by the relative drive strengths of the PMOS and NMOS transistors:
+
+| To shift V<sub>th</sub>… | Do this |
+|--------------------------|---------|
+| **Higher** (toward V<sub>DD</sub>) | Increase PMOS width (stronger PMOS) |
+| **Lower** (toward GND) | Increase NMOS width (stronger NMOS) |
+
+**SPICE Command:**
+
+```spice
+meas dc v_th when nfet_out=nfet_in   ; finds the input voltage where Vout = Vin
+```
+
+---
+
+## 2.3 Drain Current (I<sub>D</sub>)
+
+Drain current is the current flowing from drain to source, controlled by the gate voltage. It behaves differently depending on the operating region:
+
+| Region | I<sub>D</sub> behaviour |
+|--------|------------------------|
+| **Triode** | Increases linearly with V<sub>DS</sub> |
+| **Saturation** | Constant — independent of V<sub>DS</sub> |
+
+In NGSPICE, the supply branch current (`v2#branch`) is used as I<sub>D</sub>. Run `display` in NGSPICE to confirm the available branch current node name.
+
+**SPICE Commands:**
+
+```spice
+let id = v2#branch   ; assign branch current to variable id
+plot id              ; plot drain current vs. sweep variable
+```
 
 
 
