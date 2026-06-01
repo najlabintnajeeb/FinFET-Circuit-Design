@@ -192,11 +192,6 @@ let power = abs(pwr / 40e-12)
 ### Propagation Delay Visual:
 
 ```
-Vin  _______|‾‾‾‾‾‾‾‾
-            ↑ tpr (input rises through 0.35V)
-
-Vout ‾‾‾‾‾‾‾|________
-                ↑ tpf (output falls through 0.35V)
 
 tpd = (tpr + tpf) / 2
 ```
@@ -269,26 +264,9 @@ let f = 1/t_delay
 | `vsat` | 70000 | 60000 | Saturation velocity |
 | `rdsw` | 200 | 200 | Source/drain resistance |
 
-> **Note:** `nfin=1` inside the model block is a **normalization constant** — it means the model is defined per single fin. The actual number of fins is passed from the subcircuit instance. Do not modify this value.
+
 
 ---
 
-## Flow Diagram
-
-```
-.param pfin / nfin_val
-        ↓
-Xpfet1 / Xnfet1  (top-level instances)
-        ↓
-.subckt asap_7nm_pfet / nfet  (subcircuit wrapper)
-        ↓
-npmos_finfet / nnmos_finfet  (primitive device)
-        ↓
-.model BSIMCMG_osdi_P / N  (physics model)
-        ↓
-bsimcmg.osdi  (compiled model library)
-```
-
----
 
 *Technology: ASAP 7nm FinFET PDK | Simulator: ngspice | Model: BSIMCMG (OSDI)*
