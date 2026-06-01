@@ -161,13 +161,15 @@ plot id
 
 </details>
 
+![NFET ID-VD](https://github.com/user-attachments/assets/d2ee79a5-c3e2-41fc-beb2-3d988219b164)
+
+
 ---
 
 ### I<sub>D</sub>–V<sub>D</sub> Characteristics
 
 The DC sweep plots drain current (I<sub>D</sub>) versus drain voltage (V<sub>DS</sub>) at multiple gate voltages (V<sub>GS</sub>) — the classic MOSFET output characteristic.
 
-![NFET ID-VD](https://github.com/user-attachments/assets/d2ee79a5-c3e2-41fc-beb2-3d988219b164)
 
 <details>
 <summary><b>What to observe in the plot</b></summary>
