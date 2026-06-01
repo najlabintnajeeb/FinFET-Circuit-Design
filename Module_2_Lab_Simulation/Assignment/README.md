@@ -27,7 +27,7 @@ The inverter was simulated using the 7nm ASAP PDK in NGSpice. Width was varied b
 | Width variation | Via `nfins` — 6, 14, or 19 fins |
 | Analyses | DC sweep + Transient |
 
-**Simulation File:** [`inverter_assignment.spice`](simulation/inverter.spice)
+**Simulation File:** [`inverter.spice`](simulation/inverter.spice)
 
 <details>
 <summary><b>Approach 1 — Using <code>.param</code> (recommended)</b></summary>
