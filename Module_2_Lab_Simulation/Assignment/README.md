@@ -148,7 +148,10 @@ Vuniq in 0 DC 0.518
 **Gain,Noise Margin, Transconductance**
 
 
+![Gain,Noise Margin, Transconductance](../images/simualtion values.png)
 
+**Power**
+![Power](../images/power.png)
 
 
 ---
