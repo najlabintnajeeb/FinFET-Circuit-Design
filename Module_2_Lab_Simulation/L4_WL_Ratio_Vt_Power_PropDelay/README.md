@@ -1,4 +1,4 @@
-# L4 — W/L Ratio, Vt, Power, Propagation Delay, Gain And Noise Margin
+# L4 — W/L Ratio, Vt, Power, Propagation Delay, Gain And Noise Margin Transconductance, Frequency And Inverter Characteristics
 
 
 ## 2.1 W/L Ratio
