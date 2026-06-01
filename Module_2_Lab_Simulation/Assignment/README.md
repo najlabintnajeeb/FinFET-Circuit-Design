@@ -130,11 +130,11 @@ Vuniq in 0 DC 0.518
 
 ---
 
-## 4. Plots
+## 4. Extraction of the following metrics from simulation result
 
 **VTC Curve**
 
-![VTC](plots/vtc.png)
+![VTC](../images/vth.png)
 
 **Propagation Delay**
 
@@ -143,6 +143,13 @@ Vuniq in 0 DC 0.518
 **Drain Current**
 
 ![Drain Current](../images/id.png)
+
+
+**Gain,Noise Margin, Transconductance**
+
+
+
+
 
 ---
 
