@@ -11,7 +11,7 @@
 ## 2.5 Power Consumption
 
 Power consumption is calculated by integrating the transient supply current over one switching cycle and multiplying by V<sub>DD</sub>.
-
+In CMOS circuits, it is mainly calculated from the current drawn from the supply (Vdd) over time.
 **Formula:**
 
 $$P_{avg} = \frac{V_{DD} \cdot \int_{t_1}^{t_2} i(t)\, dt}{\Delta t}$$
