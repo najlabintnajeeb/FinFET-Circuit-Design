@@ -1,9 +1,5 @@
 # Assignment — 7nm FinFET Inverter Characterization
 
-![PDK](https://img.shields.io/badge/PDK-7nm_ASAP-blue?style=flat-square)
-![Tool](https://img.shields.io/badge/Simulator-NGSpice-orange?style=flat-square)
-![Status](https://img.shields.io/badge/Status-Complete-brightgreen?style=flat-square)
-
 > Characterisation of a 7nm FinFET CMOS inverter across 7 W/L configurations — extracting switching threshold, drain current, power, delay, gain, transconductance, and frequency.
 
 ---
