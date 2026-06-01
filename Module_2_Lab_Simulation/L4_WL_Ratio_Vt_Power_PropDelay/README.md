@@ -171,3 +171,51 @@ let gm = real(deriv(id, nfet_in))   ; derivative of drain current w.r.t. gate vo
 meas dc gm_max MAX gm               ; find the peak transconductance
 plot gm
 ```
+
+
+
+## 2.10 Maximum Operating Frequency (f)
+
+The maximum signal frequency the circuit can handle is determined by how fast the output can transition — limited by rise and fall times.
+
+$$f_{max} = \frac{1}{t_r + t_f}$$
+
+| Parameter | Definition |
+|-----------|-----------|
+| **t<sub>r</sub>** | Rise time — output swings from low to high |
+| **t<sub>f</sub>** | Fall time — output swings from high to low |
+| **f<sub>max</sub>** | Maximum frequency the gate can reliably switch at |
+
+**SPICE Commands:**
+
+```spice
+tran 0.1 100p                           ; transient analysis: 0.1 ps step, 100 ps window
+
+meas tran tr when nfet_in=0.07  RISE=1  ; measure rise time (input crosses 10% of Vdd)
+meas tran tf when nfet_out=0.63 FALL=1  ; measure fall time (output crosses 90% of Vdd)
+
+let t_delay = tr + tf                   ; total switching period
+print t_delay
+
+let f = 1 / t_delay                     ; maximum operating frequency
+print f
+```
+
+> The threshold voltages (0.07 V and 0.63 V) correspond to 10% and 90% of V<sub>DD</sub> = 0.7 V, consistent with standard rise/fall time definitions.
+
+---
+
+## 2.11 Output Resistance (R<sub>out</sub>)
+
+Output resistance describes how much the drain current changes in response to a change in output voltage — a key parameter for amplifier gain and signal integrity.
+
+$$R_{out} = \frac{\partial V_{out}}{\partial I_D}$$
+
+A high R<sub>out</sub> means the transistor behaves more like an ideal current source, which improves voltage gain.
+
+**SPICE Commands:**
+
+```spice
+let r_out = deriv(nfet_out, id)   ; dVout / dId → output resistance at each bias point
+plot r_out
+```
