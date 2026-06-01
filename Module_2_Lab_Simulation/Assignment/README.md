@@ -160,6 +160,18 @@ Vuniq in 0 DC 0.518
 ![Power](../images/power.png)
 
 
+
+
+Drain Current and Vth for differnt nfin
+
+
+
+
+
+
+
+
+
 ---
 
 ## Navigation
