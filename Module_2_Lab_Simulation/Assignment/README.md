@@ -27,7 +27,7 @@ The inverter was simulated using the 7nm ASAP PDK in NGSpice. Width was varied b
 | Width variation | Via `nfins` — 6, 14, or 19 fins |
 | Analyses | DC sweep + Transient |
 
-**Simulation File:** [`inverter_assignment.spice`](simulation/inverter_assignment.spice)
+**Simulation File:** [`inverter_assignment.spice`](simulation/inverter.spice)
 
 <details>
 <summary><b>Approach 1 — Using <code>.param</code> (recommended)</b></summary>
@@ -36,10 +36,19 @@ The inverter was simulated using the 7nm ASAP PDK in NGSpice. Width was varied b
 
 ```spice
 * Change these two values to switch configuration
-.param nfin_p=14 nfin_n=14
+.param pfin=14 nfin_val=14
 
-Xpfet1 nfet_out nfet_in vdd vdd asap_7nm_pfet l=7e-009 nfin={nfin_p}
-Xnfet1 nfet_out nfet_in GND GND asap_7nm_nfet l=7e-009 nfin={nfin_n}
+
+Xpfet1 nfet_out nfet_in vdd vdd asap_7nm_pfet l=7e-009 nfin={pfin}
+Xnfet1 nfet_out nfet_in GND GND asap_7nm_nfet l=7e-009 nfin={nfin_val}
+
+.subckt asap_7nm_pfet S G D B l=7e-009 nfin={pfin}
+    npmos_finfet S G D B BSIMCMG_osdi_P l=7e-009 nfin={pfin}
+.ends asap_7nm_pfet
+
+.subckt asap_7nm_nfet S G D B l=7e-009 nfin={nfin_val}
+    nnmos_finfet S G D B BSIMCMG_osdi_N l=7e-009 nfin={nfin_val}
+.ends asap_7nm_nfet
 ```
 
 To reproduce any row from the table, just update `.param nfin_p` and `.param nfin_n` accordingly.
