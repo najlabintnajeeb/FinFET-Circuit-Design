@@ -138,7 +138,7 @@ Vuniq in 0 DC 0.518
 
 **Propagation Delay**
 
-![Propagation Delay](plots/propagation_delay.png)
+![Propagation Delay](../images/delay.png)
 
 **Drain Current**
 
