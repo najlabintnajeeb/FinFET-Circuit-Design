@@ -142,7 +142,7 @@ Vuniq in 0 DC 0.518
 
 **Drain Current**
 
-![Drain Current](plots/drain_current.png)
+![Drain Current](../images/id.png)
 
 ---
 
