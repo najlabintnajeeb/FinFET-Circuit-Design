@@ -1,4 +1,4 @@
-<img width="701" height="543" alt="id" src="https://github.com/user-attachments/assets/b7be05c2-e51b-43d5-8676-89e388b9b83b" /># L2 — First Inverter Characteristics Using 7nm FinFETs
+# L2 — First Inverter Characteristics Using 7nm FinFETs
 
 **Course:** FinFET Circuit Design and Characterization
 **Module:** Module 2 — Lab-to-Simulation
@@ -232,7 +232,7 @@ pre_osdi /workspaces/vsd-7nm/asap_7nm_Xschem/bsimcmg.osdi
 **** end user architecture code
 .end
 
-
+explain the spice file here
 
 
 
@@ -270,7 +270,7 @@ This tells SPICE to measure the voltage where input and output curves intersect.
 
 <img width="699" height="541" alt="vth" src="https://github.com/user-attachments/assets/c725cb1c-a581-4621-846e-fca04c42bfde" />
 
-here v_th = 3.447862e-01
+here v_th = 3.447862e-01- ideal 350
 
 
 2.3 Drain Current (Id)
@@ -286,7 +286,9 @@ In SPICE (NGSPICE)
 Drain current is obtained from the branch current of the voltage source.
 
 let id=v2#branch 
-plot id -you can visualize <img width="701" height="543" alt="id" src="https://github.com/user-attachments/assets/c59bdb5c-60d8-4733-a4b2-344ca0b7a1b2" />
+plot id -you can visualize 
+
+<img width="701" height="543" alt="id" src="https://github.com/user-attachments/assets/c59bdb5c-60d8-4733-a4b2-344ca0b7a1b2" />
 
 
 
