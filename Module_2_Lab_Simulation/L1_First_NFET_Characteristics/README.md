@@ -187,6 +187,7 @@ Each curve corresponds to a different V<sub>GS</sub> step (0.2 V increments up t
 <details>
 <summary><b>NGSpice plot</b></summary>
 
+'''
 ![ID-VD NGSpice](https://github.com/user-attachments/assets/3b2d3f5e-e675-4523-a067-7bc018112671)
 
 </details>
