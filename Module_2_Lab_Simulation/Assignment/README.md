@@ -73,7 +73,8 @@ Xnfet1 nfet_out nfet_in GND GND asap_7nm_nfet l=7e-009 nfin=14
 A dummy voltage source was added to make simulation results traceable:
 
 ```spice
-* Unique identifier — najla (110+97+106+108+97 = 518 → 0.518 V)
+* Unique identifier — najla
+(110+97+106+108+97 = 518 → 0.518 V)
 Vuniq in 0 DC 0.518
 ```
 
