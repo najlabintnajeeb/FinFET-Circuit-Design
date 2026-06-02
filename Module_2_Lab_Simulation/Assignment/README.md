@@ -63,6 +63,16 @@ If you prefer not to use `.param`, set `nfin` directly in the device lines. You'
 ```spice
 Xpfet1 nfet_out nfet_in vdd vdd asap_7nm_pfet l=7e-009 nfin=14
 Xnfet1 nfet_out nfet_in GND GND asap_7nm_nfet l=7e-009 nfin=14
+
+
+.subckt asap_7nm_pfet S G D B l=7e-009 nfin=14
+	npmos_finfet S G D B BSIMCMG_osdi_P l=7e-009 nfin=14
+.ends asap_7nm_pfet
+
+
+.subckt asap_7nm_nfet S G D B l=7e-009 nfin=14
+	nnmos_finfet S G D B BSIMCMG_osdi_N l=7e-009 nfin=14
+.ends asap_7nm_nfet
 ```
 
 </details>
