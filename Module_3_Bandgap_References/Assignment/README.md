@@ -1,6 +1,5 @@
 # Bandgap Reference Circuit with SCMB — ASAP 7nm PDK
 
-![Xschem](https://img.shields.io/badge/Tool-Xschem-blue) ![Ngspice](https://img.shields.io/badge/Simulator-Ngspice--46%2B-green) ![PDK](https://img.shields.io/badge/PDK-ASAP%207nm-orange) ![Status](https://img.shields.io/badge/Status-Complete-brightgreen)
 
 ---
 
@@ -197,16 +196,37 @@ Temp Coefficient = 0.568 mV/°C
 ## Waveforms
 
 ### Transient — Vref Startup (VDD=1.0V, Temp=27°C)
-![Vref Transient](trans_vref.png)
+![Vref Transient](../images/trans_vref.png)
 
 - Vref starts from 0V, rises and stabilizes at **~878mV**
 - Startup time = **1.06 ps**
 
 ### Transient — Vctat Startup (VDD=1.0V, Temp=27°C)
-![Vctat Transient](trans_vctat.png)
+![Vctat Transient](../images/trans_vctat.png)
 
 - Vctat starts from 0V, settles at **~155mV**
 - CTAT behavior confirmed — decreases with temperature
+
+### Vref and Vctat vs Temperature
+![Vref and Vctat](../images/vref%20and%20vctat.png)
+
+- Vref increases with temperature — PTAT dominant
+- Vctat decreases with temperature — CTAT behavior confirmed
+
+### Vref - Vctat vs Temperature
+![Vref minus Vctat](../images/vref-vctat.png)
+
+- Difference increases linearly with temperature
+
+### Vref vs Temperature
+![Vref](../images/vref.png)
+
+- Vref range: 828.4mV at -40°C to 922.1mV at 125°C
+
+### Temperature Coefficient (dVref/dT)
+![Temp Coefficient](../images/temp_coeff.png)
+
+- Temperature coefficient = **0.568 mV/°C**
 
 ---
 
