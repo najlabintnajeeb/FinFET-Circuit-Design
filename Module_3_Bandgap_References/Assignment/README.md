@@ -44,13 +44,7 @@ Design and simulate a Bandgap Reference Circuit using Xschem and Ngspice with th
 
 Resistor value derived from ASCII sum of username **`najla`**:
 
-| Character | ASCII Value |
-|-----------|-------------|
-| n | 110 |
-| a | 97 |
-| j | 106 |
-| l | 108 |
-| a | 97 |
+ ASCII Value najla= 110+97+106+108+97
 | **Total** | **518** |
 
 Placed in the startup/bias branch:
@@ -151,13 +145,11 @@ print VREF_Max
 | 5 | 1.0 | 125 | 922.1 | 974.8 | 0.80 ps |
 
 ### Observations
-- Vref **increases with temperature** — PTAT dominant behavior due to R3=518Ω in startup branch
-- Line regulation **decreases with temperature** — circuit more stable at high temp
-- Startup at -40°C is **14.3ns** — slower due to reduced transistor mobility at cold temperature
-- Temperature coefficient = **0.568 mV/°C** across -40°C to 125°C
+- Vref increases with temperature
+- Line regulation decreases with temperature— circuit more stable at high temp
+- Startup at -40°C is 14.3ns — slower due to reduced transistor mobility at cold temperature
 
 ---
-
 
 ## Waveforms
 
