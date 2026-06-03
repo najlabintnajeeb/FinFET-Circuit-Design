@@ -65,8 +65,199 @@ R3 net10 GND 518 ac=1k
 
 ## Schematic
 
-![Schematic](schematic.png)
+![Schematic](../images/bgr_schematic.png)
 
+**Key components visible:**
+- PFET current mirror (pfet1–pfet6) connected to VDD
+- NFET differential pair (nfet1–nfet6) for PTAT/CTAT generation
+- Startup circuit (nfet7–nfet10) at bottom
+- R1=50k between Vref and Vctat
+- R2=33k in bias network
+- R3=518Ω unique resistor in startup branch
+- V1=0.7V supply source
+
+---
+
+## Simulation Setup
+
+### Netlist Summary
+```spice
+Xpfet1 net6 net1 VDD VDD asap_7nm_pfet l=7e-009 nfin=14
+Xpfet2 net2 net1 VDD VDD asap_7nm_pfet l=7e-009 nfin=14
+Xpfet3 net3 net1 net2 VDD asap_7nm_pfet l=7e-009 nfin=14
+Xpfet4 net1 net1 VDD VDD asap_7nm_pfet l=7e-009 nfin=14
+Xpfet5 net7 net1 net1 VDD asap_7nm_pfet l=7e-009 nfin=14
+Xpfet6 Vref net1 VDD VDD asap_7nm_pfet l=7e-009 nfin=14
+Xnfet1 net4 net4 net10 GND asap_7nm_nfet l=7e-009 nfin=14
+...
+R1 Vref vctat 50k ac=1k
+R2 net9 net8 33k ac=1k
+R3 net10 GND 518 ac=1k
+V1 VDD GND PULSE(0 1.0 1n 0.1n 0.1n 50n 100n)
+```
+
+### Line Regulation Simulation
+```spice
+.dc V1 0.775 0.825 0.005
+.control
+  set temp = 27
+  alter V1 = 0.8
+  op
+  print v(vref)
+  dc V1 0.775 0.825 0.005
+  meas dc v_max1 max v(vref)
+  meas dc v_min1 min v(vref)
+  let lr1 = ((v_max1 - v_min1) / 0.05) * 1000
+  print lr1
+.endc
+```
+
+### Startup Time Simulation
+```spice
+.ic V(Vref)=0 V(vctat)=0 V(net1)=0
+.tran 0.01n 20n uic
+.control
+run
+meas tran Vref_final FIND v(Vref) AT=18n
+meas tran startup_time WHEN v(Vref)=0.99*Vref_final RISE=1
+print startup_time
+plot v(Vref)
+.endc
+```
+
+### Temperature Sweep
+```spice
+.dc temp -40 125 5
+.control
+run
+plot v(Vref) v(Vctat)
+plot v(Vref)-v(Vctat)
+let dVREF_dT = deriv(v(Vref)) * 1e6
+plot dVREF_dT
+meas DC VREF_Min MIN v(Vref)
+meas DC VREF_Max MAX v(Vref)
+print VREF_Min
+print VREF_Max
+.endc
+```
+
+---
+
+## Characterization Table
+
+| S.No | VDD (V) | Temp (°C) | Vref (mV) | Line Reg (mV/V) | Startup Time |
+|------|---------|-----------|-----------|-----------------|--------------|
+| 1 | 0.8 | 27 | 676.0 | 1010.0 | 2.16 ps |
+| 2 | 0.9 | 27 | 777.0 | 1009.5 | 1.37 ps |
+| 3 | 1.0 | 27 | 877.9 | 1008.1 | 1.06 ps |
+| 4 | 1.0 | -40 | 828.4 | 1032.6 | 14.3 ns |
+| 5 | 1.0 | 125 | 922.1 | 974.8 | 0.80 ps |
+
+### Observations
+- Vref **increases with temperature** — PTAT dominant behavior due to R3=518Ω in startup branch
+- Line regulation **decreases with temperature** — circuit more stable at high temp
+- Startup at -40°C is **14.3ns** — slower due to reduced transistor mobility at cold temperature
+- Temperature coefficient = **0.568 mV/°C** across -40°C to 125°C
+
+---
+
+## Vref vs Temperature Data
+
+**Summary:**
+```
+Vref_min = 828.4 mV  at temp = -40°C
+Vref_max = 922.1 mV  at temp =  125°C
+Temp Coefficient = 0.568 mV/°C
+```
+
+---
+
+## Waveforms
+
+### Transient — Vref Startup (VDD=1.0V, Temp=27°C)
+![Vref Transient](../images/trans_vref.png)
+
+- Vref starts from 0V, rises and stabilizes at **~878mV**
+- Startup time = **1.06 ps**
+
+### Transient — Vctat Startup (VDD=1.0V, Temp=27°C)
+![Vctat Transient](../images/trans_vctat.png)
+
+- Vctat starts from 0V, settles at **~155mV**
+- CTAT behavior confirmed
+
+### Transient — Vref Startup (Temp=125°C)
+![Vref Transient 125](../images/vref_tran_125temp.png)
+
+- Vref settles at **~922mV** at high temperature
+- Startup time = **0.80 ps** — faster at high temp
+
+### Transient — Vref Startup (Temp=-40°C)
+![Transient at -40](../images/transient%20at%20-40.png)
+
+- Slower startup at cold temperature
+- Startup time = **14.3 ns** — reduced transistor mobility at -40°C
+
+### Transient — Vref at Different VDD Values
+![Transient different VDD](../images/transient_vref+diff%20vdd.png)
+
+- VDD=0.8 → startup 2.16 ps
+- VDD=0.9 → startup 1.37 ps
+- VDD=1.0 → startup 1.06 ps
+
+### VDD Sweep — Line Regulation
+![VDD Sweep](../images/VDD%20sweep%20plot.png)
+
+- Vref increases linearly with VDD
+- Line regulation = **~1010 mV/V** at temp=27°C
+
+### Vref and Vctat vs Temperature
+![Vref and Vctat](../images/vref%20and%20vctat.png)
+
+- Vref increases with temperature — PTAT dominant
+- Vctat decreases with temperature — CTAT behavior confirmed
+
+### Vref - Vctat vs Temperature
+![Vref minus Vctat](../images/vref-vctat.png)
+
+- Difference increases linearly with temperature
+
+### Vref vs Temperature
+![Vref](../images/vref.png)
+
+- Vref range: 828.4mV at -40°C to 922.1mV at 125°C
+
+### Vref Temperature Sweep (detailed)
+![Vref Temp Sweep](../images/vref%20for%20temp%20sweep.png)
+
+- Full 1°C resolution sweep from -40°C to 125°C
+
+### Temperature Coefficient (dVref/dT)
+![Temp Coefficient](../images/temp_coeff.png)
+
+- Temperature coefficient = **0.568 mV/°C**
+
+---
+
+## Simulation Commands Reference
+
+| # | Command | Purpose |
+|---|---------|---------|
+| 1 | `.dc temp -40 125 5` | Temperature sweep -40 to 125°C |
+| 2 | `.dc V1 0.7 1.1 0.1` | VDD sweep for line regulation |
+| 3 | `.tran 0.01n 20n uic` | Transient with zero initial conditions |
+| 4 | `meas DC VREF_Min MIN v(Vref)` | Find minimum Vref automatically |
+| 5 | `meas DC VREF_Max MAX v(Vref)` | Find maximum Vref automatically |
+| 6 | `meas tran startup_time WHEN v(Vref)=0.99*Vref_final` | Measure startup time at 99% of final value |
+| 7 | `let dVREF_dT = deriv(v(Vref)) * 1e6` | Calculate temperature coefficient |
+| 8 | `foreach vdd_val 0.8 0.9 1.0` | Loop through multiple VDD values |
+| 9 | `reset` + `set temp = value` | Change temperature inside control block |
+| 10 | `.ic V(Vref)=0 V(vctat)=0` | Force zero initial conditions for startup |
+
+---
+
+*VSD 7nm Workshop — BGR Assignment*
+*Username: najla | Unique Resistor R3 = 518Ω | ASAP 7nm PDK*
 **Key components visible:**
 - PFET current mirror (pfet1–pfet6) connected to VDD
 - NFET differential pair (nfet1–nfet6) for PTAT/CTAT generation
