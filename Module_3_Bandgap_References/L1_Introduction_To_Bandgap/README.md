@@ -1,4 +1,4 @@
-# L1 — Introduction To Bandgap
+# Bandgap
 
 **Course:** FinFET Circuit Design and Characterization
 **Module:** Module 3 — Designing Bandgap References
