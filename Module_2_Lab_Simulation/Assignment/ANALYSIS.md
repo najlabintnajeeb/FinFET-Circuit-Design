@@ -143,7 +143,7 @@ PMOS has more fins than NMOS → stronger pull-up → V<sub>th</sub> moves towar
 | More NMOS fins | V<sub>th</sub> shifts **down** | NMOS pulls output low faster |
 | More PMOS fins | V<sub>th</sub> shifts **up** | PMOS pulls output high faster |
 
-> Add `6:6` and `19:19` symmetric plots to section 2 once generated.
+
 
 ---
 
