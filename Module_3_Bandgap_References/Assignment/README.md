@@ -38,7 +38,7 @@ Username: `najla`
 | a | 97 |
 | **Total** | **518** |
 
-Placed as: `R3 net10 GND 518 ac=1k` in the startup/bias branch.
+Placed as: `R3 net10 GND 518 ac=1k` in the startup branch.
 
 ---
 
