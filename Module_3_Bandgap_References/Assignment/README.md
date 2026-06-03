@@ -47,7 +47,7 @@ Resistor value derived from ASCII sum of username **`najla`**:
  ASCII Value najla= 110+97+106+108+97
 | **Total** | **518** |
 
-Placed in the startup/bias branch:
+Placed in the startup branch:
 ```spice
 R3 net10 GND 518 ac=1k
 ```
