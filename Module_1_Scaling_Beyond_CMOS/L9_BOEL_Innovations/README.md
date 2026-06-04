@@ -51,6 +51,8 @@ High aspect ratio      Lower aspect ratio
 Severe gap fill        Improved gap fill
 ```
 
+![Interconnect Scaling Roadmap](images/interconnects.png)
+
 ### Subtractive Process
 
 For materials like ruthenium, a subtractive process becomes possible — deposit a blanket metal film and etch it to pattern, similar to how aluminium was done. This works because ruthenium can be etched and does not need thick barriers, enabling a fully barrierless flow.
@@ -90,6 +92,8 @@ The side barriers are kept — only the **bottom barrier** is removed:
 | Bottom barrier removed | Sidewalls only | ~50% of baseline |
 | Fully barrierless (ruthenium) | None | Minimal |
 
+![Extending Copper Interconnects — Selective Barrier Integration](images/extended_copper_interconnects.png)
+
 </details>
 
 ---
@@ -121,6 +125,8 @@ As wire widths shrink, the effective resistivity of copper increases well beyond
 - Most explored material for high-volume manufacturing among post-copper candidates
 
 > Ruthenium's advantage is not in bulk resistivity — copper is still better in bulk. The advantage is that ruthenium **scales better**: no barriers needed and less resistivity increase at narrow widths.
+
+![Non-Cu Metals — Material Properties Comparison](images/Non_cu_.png)
 
 </details>
 
@@ -176,6 +182,8 @@ Transistor                         Transistor
 | **Fewer metal layers needed** | Power no longer requires front-side metal |
 | **Smaller standard cell height** | Wide VDD/VSS rails moved to back side |
 
+![Back-Side Power Delivery Network](images/BS_PDN.png)
+
 ### Standard Cell Area Benefit
 
 In a standard cell, wide VDD and VSS tracks run along the cell boundary and consume cell height. Moving these to the back side means cell height can be reduced without losing any signal tracks — directly reducing standard cell area, which connects back to the scaling discussed in L5.
@@ -200,17 +208,15 @@ In a standard cell, wide VDD and VSS tracks run along the cell boundary and cons
 
 ---
 
-## Lecture Insights
 
-> 💡 **The gap fill problem drives the whole process evolution.** Dual → single damascene → subtractive is not about switching materials arbitrarily — each step is a direct response to the shrinking gap that makes the previous process unworkable.
+> **The gap fill problem drives the whole process evolution.** Dual → single damascene → subtractive is not about switching materials arbitrarily — each step is a direct response to the shrinking gap that makes the previous process unworkable.
 
-> 💡 **Removing the bottom barrier cuts via resistance by 50% with no dimensional change.** The blocking material process is a purely geometric fix — the same via, same copper, but the barrier no longer occupies the bottom cross-section.
+> **Removing the bottom barrier cuts via resistance by 50% with no dimensional change.** The blocking material process is a purely geometric fix — the same via, same copper, but the barrier no longer occupies the bottom cross-section.
 
-> 💡 **Ruthenium wins at scale, not in bulk.** Its bulk resistivity is worse than copper. The advantage appears at narrow widths where copper's effective resistivity rises sharply and barriers consume the cross-section — ruthenium avoids both problems.
+> **Ruthenium wins at scale, not in bulk.** Its bulk resistivity is worse than copper. The advantage appears at narrow widths where copper's effective resistivity rises sharply and barriers consume the cross-section — ruthenium avoids both problems.
 
-> 💡 **BS-PDN doesn't improve one component — it restructures the whole power delivery path.** By cutting 17–18 resistive layers out of the power path, IR drop drops dramatically, front-side metal is freed for signals, and standard cells can shrink — all from one architectural change.
+> **BS-PDN doesn't improve one component — it restructures the whole power delivery path.** By cutting 17–18 resistive layers out of the power path, IR drop drops dramatically, front-side metal is freed for signals, and standard cells can shrink — all from one architectural change.
 
-> 💡 **"There is plenty of room everywhere."** Scaling is not limited to the transistor. There is room at the bottom (devices), in the interconnect (BOEL), and at the system level (3D integration, back-side delivery).
 
 ---
 
