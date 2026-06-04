@@ -8,14 +8,13 @@
 
 ## At a Glance
 
-| Attribute | Detail |
-|-----------|--------|
-| **Core Theme** | Interconnect scaling and back-side power delivery |
-| **Key Materials** | Copper → Ruthenium, Nickel, Molybdenum, Iridium, Rhodium |
-| **Key Process** | Dual damascene → Single damascene → Subtractive (barrierless) |
-| **Central Problem** | Gap fill, barrier resistance, IR drop across 17–18 metal layers |
-| **Key Innovation** | Back-Side Power Delivery Network (BS-PDN) |
-| **Connects To** | L5 (standard cell area), L6 (parasitics), L8 (3D structures) |
+| | |
+|---|---|
+| **What** | Interconnect scaling innovations — from process changes to new materials to back-side power delivery |
+| **Why** | Interconnect resistance and IR drop cancel out transistor-level gains if not addressed |
+| **How** | Dual → single damascene for gap fill · bottom barrier removal for via resistance · ruthenium for barrierless wires · BS-PDN to move power off the front-side metal stack |
+| **Key Concept** | Back-Side Power Delivery Network (BS-PDN) — deliver VDD/VSS from the wafer back side, freeing front-side metal for signals only |
+| **Key Numbers** | ~300 Ω/pillar front-side IR drop · ~170 Ω/µm M0 resistance · 50% via resistance reduction with bottom barrier removal · 17–18 metal layers in current processes |
 
 ---
 
