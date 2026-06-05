@@ -27,7 +27,7 @@ The inverter was simulated using the 7nm ASAP PDK in NGSpice. Width was varied b
 | Width variation | Via `nfins` — 6, 14, or 19 fins |
 | Analyses | DC sweep + Transient |
 
-**Simulation File:** [`inverter.spice`](simulation/inverter.spice)
+**Simulation File:** [`inverter.spice`](./inverter.spice)
 
 <details>
 <summary><b>Approach 1 — Using <code>.param</code> (recommended)</b></summary>
@@ -164,7 +164,7 @@ Vuniq in 0 DC 0.518
 **Gain,Noise Margin, Transconductance**
 
 
-![Gain,Noise Margin, Transconductance](../images/simualtion values.png)
+![Gain,Noise Margin,Transconductance](../images/simualtion_values.png)
 
 **Power**
 ![Power](../images/power.png)
