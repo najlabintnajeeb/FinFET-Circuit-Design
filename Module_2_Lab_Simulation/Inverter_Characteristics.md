@@ -40,28 +40,7 @@ The circuit under study is a **CMOS inverter** built with 7nm FinFET devices fro
 | Input stimulus | Pulse: 0 → 0.7 V, 20 ps rise/fall, 500 ps period |
 | Analyses run | DC sweep + Transient |
 
-<details>
-<summary><b>Circuit Nodes</b></summary>
 
-```
-         VDD (0.7V)
-            │
-       ┌────┴────┐
-       │  PFET   │  nfin=14
-nfet_in┤G        ├── nfet_out
-       │         │
-       └────┬────┘
-            │
-       ┌────┴────┐
-       │  NFET   │  nfin=14
-nfet_in┤G        ├── nfet_out
-       │         │
-       └────┬────┘
-            │
-           GND
-```
-
-</details>
 
 ---
 
@@ -221,7 +200,7 @@ plot gain_av
 <details>
 <summary><b>Plot</b></summary>
 
-![Voltage Gain](plots/gain.png)
+![Voltage Gain](./images/gain_with_and_without_abs.png)
 
 </details>
 
@@ -261,7 +240,7 @@ print nmh nml
 <details>
 <summary><b>Plot</b></summary>
 
-![Noise Margin](plots/noise_margin.png)
+![Noise Margin](./images/simulation_values.png)
 
 </details>
 
@@ -289,7 +268,7 @@ plot gm
 <details>
 <summary><b>Plot</b></summary>
 
-![Transconductance](plots/transconductance.png)
+![Transconductance](./images/gm.png)
 
 </details>
 
@@ -328,7 +307,7 @@ print t_delay f
 <details>
 <summary><b>Plot</b></summary>
 
-![Frequency](plots/frequency.png)
+![Frequency](./images/delay.png)
 
 </details>
 
@@ -355,7 +334,7 @@ plot r_out
 <details>
 <summary><b>Plot</b></summary>
 
-![Output Resistance](plots/output_resistance.png)
+![Output Resistance](./images/rout.png)
 
 </details>
 
