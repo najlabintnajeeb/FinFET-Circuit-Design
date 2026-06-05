@@ -86,7 +86,7 @@ meas dc v_th when nfet_out=nfet_in   ; finds Vin where Vout = Vin
 <details>
 <summary><b>Plot</b></summary>
 
-![Switching Threshold](plots/vth.png)
+![Switching Threshold](./images/vth.png)
 
 </details>
 
