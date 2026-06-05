@@ -1,156 +1,177 @@
+# nfin Analysis — VTC and Id Characteristics
 
-# VTC and I<sub>D</sub> Analysis — Fin Configuration Sweep
-
-![PDK](https://img.shields.io/badge/PDK-7nm_ASAP-blue?style=flat-square)
-![Tool](https://img.shields.io/badge/Simulator-NGSpice-orange?style=flat-square)
-
-> Visual comparison of how changing PMOS and NMOS fin counts shifts the VTC curve and drain current profile. Configurations are grouped to show the progression clearly.
+> Investigating how PMOS/NMOS fin count ratio affects inverter switching threshold, drain current, and performance.
+> Channel length **L = 7nm is fixed** throughout. Width is controlled via `nfin`.
 
 ---
 
 ## Contents
 
-| # | Topic | Jump To |
-|---|-------|---------|
-| 1 | How to Read These Plots | [→](#1-how-to-read-these-plots) |
-| 2 | Balanced — Equal PMOS & NMOS | [→](#2-balanced--equal-pmos--nmos) |
-| 3 | NMOS Dominant — V<sub>th</sub> shifts down | [→](#3-nmos-dominant--vth-shifts-down) |
-| 4 | PMOS Dominant — V<sub>th</sub> shifts up | [→](#4-pmos-dominant--vth-shifts-up) |
+| # | Topic |
+|---|-------|
+| 1 | [Experiment 1 — PMOS fixed, NMOS varied](#1-experiment-1--pmos-fixed-nfin14-nmos-varied) |
+| 2 | [Experiment 2 — NMOS fixed, PMOS varied](#2-experiment-2--nmos-fixed-nfin14-pmos-varied) |
+| 3 | [Summary](#3-summary) |
+| 4 | [Other Plots](#4-other-simulation-plots) |
 
 ---
 
-## 1. How to Read These Plots
+## 1. Experiment 1 — PMOS fixed (nfin=14), NMOS varied
 
-| Plot | What to look for |
-|------|-----------------|
-| **VTC** | Where the curve crosses V<sub>out</sub> = V<sub>in</sub> — that is V<sub>th</sub>. Curve shifts **right** when PMOS is stronger, **left** when NMOS is stronger. |
-| **I<sub>D</sub>** | Peak height shows total current drive. Peak position shifts with V<sub>th</sub> — stronger NMOS moves peak left, stronger PMOS moves it right. |
+> **Goal:** Keep PMOS constant, increase NMOS strength progressively.
+> **Expected:** VTC shifts left, Vth decreases as NMOS dominates.
 
----
+```spice
+.param pfin=14       ← fixed
+.param nfin_val=6    ← change this: 6 → 14 → 19
+```
 
-## 2. Balanced — Equal PMOS & NMOS
+### VTC Curves
 
-Both transistors have equal drive strength → V<sub>th</sub> sits at V<sub>DD</sub>/2 = **0.3448 V**
+| PMOS=14, NMOS=6 | PMOS=14, NMOS=14 | PMOS=14, NMOS=19 |
+|:---------------:|:----------------:|:----------------:|
+| PMOS dominates | Balanced | NMOS dominates |
+| <img src="../images/(VTC)14:6.png" width="280"/> | <img src="../images/(VTC)14:14.png" width="280"/> | <img src="../images/(VTC)6:19.png" width="280"/> |
+| Vth = 0.4209 V ↑ | Vth = 0.3448 V | Vth = 0.2682 V ↓ |
 
-### 14 fins / 14 fins
+### Drain Current (Id)
 
-**VTC**
+| PMOS=14, NMOS=6 | PMOS=14, NMOS=14 | PMOS=14, NMOS=19 |
+|:---------------:|:----------------:|:----------------:|
+| <img src="../images/(ID)14:6.png" width="280"/> | <img src="../images/(ID)14:14.png" width="280"/> | <img src="../images/(ID)6:19.png" width="280"/> |
 
-![VTC 14/14](../images/(VTC)14:14.png)
+### Observations
 
-**I<sub>D</sub>**
-
-![ID 14/14](../images/(ID)14:14.png)
-
----
-
-## 3. NMOS Dominant — V<sub>th</sub> shifts down
-
-NMOS has more fins than PMOS → stronger pull-down → V<sub>th</sub> moves toward GND
-
-### 14 fins PMOS / 7 fins NMOS → wait, NMOS weaker here
-> Configs below have **more NMOS fins** than PMOS — NMOS pulls output low faster.
-
-### PMOS 6 / NMOS 14
-
-**VTC**
-
-![VTC 6/14](../images/(VTC)6:14.png)
-
-**I<sub>D</sub>**
-
-![ID 6/14](../images/(ID)6:14.png)
+- Vth shifts **left** (decreases) as NMOS nfin increases — stronger NMOS pulls output LOW faster
+- Id peak shifts toward lower Vin as NMOS becomes dominant
+- At NMOS=19, NMOS is ~3× stronger than PMOS — inverter heavily skewed toward LOW output
 
 ---
 
-### PMOS 6 / NMOS 19
+## 2. Experiment 2 — NMOS fixed (nfin=14), PMOS varied
 
-**VTC**
+> **Goal:** Keep NMOS constant, increase PMOS strength progressively.
+> **Expected:** VTC shifts right, Vth increases as PMOS dominates.
 
-![VTC 6/19](../images/(VTC)6:19.png)
+```spice
+.param pfin=6        ← change this: 6 → 14 → 19
+.param nfin_val=14   ← fixed
+```
 
-**I<sub>D</sub>**
+### VTC Curves
 
-![ID 6/19](../images/(ID)6:19.png)
+| PMOS=6, NMOS=14 | PMOS=14, NMOS=14 | PMOS=19, NMOS=14 |
+|:---------------:|:----------------:|:----------------:|
+| NMOS dominates | Balanced | PMOS dominates |
+| <img src="../images/(VTC)6:14.png" width="280"/> | <img src="../images/(VTC)14:14.png" width="280"/> | <img src="../images/(VTC)19:14.png" width="280"/> |
+| Vth = 0.2682 V ↓ | Vth = 0.3448 V | Vth = 0.3658 V ↑ |
 
----
+### Drain Current (Id)
 
-### PMOS 14 / NMOS 19 *(moderate asymmetry)*
+| PMOS=6, NMOS=14 | PMOS=14, NMOS=14 | PMOS=19, NMOS=14 |
+|:---------------:|:----------------:|:----------------:|
+| <img src="../images/(ID)6:14.png" width="280"/> | <img src="../images/(ID)14:14.png" width="280"/> | <img src="../images/(ID)19:14.png" width="280"/> |
 
-**I<sub>D</sub>**
+### Observations
 
-![ID 14/19 — no VTC available yet](../images/(ID)6:19.png)
-
----
-
-## 4. PMOS Dominant — V<sub>th</sub> shifts up
-
-PMOS has more fins than NMOS → stronger pull-up → V<sub>th</sub> moves toward V<sub>DD</sub>
-
-### PMOS 14 / NMOS 7
-
-**VTC**
-
-![VTC 14/7](../images/(VTC)14:7.png)
-
-**I<sub>D</sub>**
-
-![ID 14/7](../images/(ID)14:7.png)
+- Vth shifts **right** (increases) as PMOS nfin increases — stronger PMOS holds output HIGH longer
+- Id peak shifts toward higher Vin as PMOS becomes dominant
+- 14/14 acts as the shared balanced baseline between both experiments
 
 ---
 
-### PMOS 14 / NMOS 6
+## 3. Summary
 
-**VTC**
+### Vth vs nfin Ratio
 
-![VTC 14/6](../images/(VTC)14:6.png)
+| Experiment | PMOS nfin | NMOS nfin | Ratio | Vth (V) | Dominant |
+|:----------:|:---------:|:---------:|:-----:|:-------:|:--------:|
+| 1 | 14 | 6 | 2.3:1 | 0.4209 | PMOS ↑ |
+| 1 | 14 | 14 | 1:1 | 0.3448 | Balanced |
+| 1 | 14 | 19 | 1:1.4 | 0.2682 | NMOS ↓ |
+| 2 | 6 | 14 | 1:2.3 | 0.2682 | NMOS ↓ |
+| 2 | 14 | 14 | 1:1 | 0.3448 | Balanced |
+| 2 | 19 | 14 | 1.4:1 | 0.3658 | PMOS ↑ |
 
-**I<sub>D</sub>**
+### Key Takeaways
 
-![ID 14/6](../images/(ID)14:6.png)
-
----
-
-### PMOS 19 / NMOS 14 *(moderate asymmetry)*
-
-**VTC**
-
-![VTC 19/14](../images/(VTC)19:14.png)
-
-**I<sub>D</sub>**
-
-![ID 19/14](../images/(ID)19:14.png)
-
----
-
-### PMOS 19 / NMOS 6 *(strong asymmetry)*
-
-**VTC**
-
-![VTC 19/6](../images/(VTC)19:6.png)
-
-**I<sub>D</sub>**
-
-![ID 19/6](../images/(ID)19:6.png)
+- **Vth is controlled by the PMOS/NMOS strength ratio**, not absolute fin count
+- **Equal ratio → Vth ≈ VDD/2** regardless of how many fins are used
+- **Stronger NMOS → Vth shifts toward GND** (lower)
+- **Stronger PMOS → Vth shifts toward VDD** (higher)
+- Both experiments share **14/14 as a common balanced reference point**
 
 ---
 
-## Summary
+## 4. Other Simulation Plots
 
-| Group | V<sub>th</sub> direction | Drive strength |
-|-------|--------------------------|----------------|
-| Equal fins | V<sub>th</sub> = V<sub>DD</sub>/2 | Balanced |
-| More NMOS fins | V<sub>th</sub> shifts **down** | NMOS pulls output low faster |
-| More PMOS fins | V<sub>th</sub> shifts **up** | PMOS pulls output high faster |
+<details>
+<summary><b>Gain — with and without abs()</b></summary>
 
+<img src="../images/gain_with_and_without_abs.png" width="600"/>
 
+> Raw gain dVout/dVin and its absolute value. Peak of |gain| marks the maximum gain point used to extract VIL, VIH, VOL, VOH.
+
+</details>
+
+<details>
+<summary><b>Transconductance (gm)</b></summary>
+
+<img src="../images/gm.png" width="600"/>
+
+> gm = dId/dVin — peaks near the switching threshold. Higher nfin → higher peak gm proportionally.
+
+</details>
+
+<details>
+<summary><b>Output Resistance (rout)</b></summary>
+
+<img src="../images/rout.png" width="600"/>
+
+> rout = dVout/dId — high in saturation regions, drops sharply near the switching point.
+
+</details>
+
+<details>
+<summary><b>Propagation Delay</b></summary>
+
+<img src="../images/delay.png" width="600"/>
+
+> Transient waveform showing tprise and tpfall. tpd = (tpr + tpf) / 2.
+
+</details>
+
+<details>
+<summary><b>Power Consumption</b></summary>
+
+<img src="../images/power.png" width="600"/>
+
+> Average power extracted by integrating Id over one switching cycle × VDD.
+
+</details>
+
+<details>
+<summary><b>Id vs Vd</b></summary>
+
+<img src="../images/id vs vd.png" width="600"/>
+
+> Drain current vs drain voltage — shows linear and saturation regions of the FinFET device.
+
+</details>
+
+<details>
+<summary><b>Simulation Terminal Output</b></summary>
+
+<img src="../images/simulation_values.png" width="600"/>
+
+> ngspice terminal output showing all extracted values: Vth, max_gain, VIL, VIH, VOH, VOL, NMH, NML, gm_max, tpr, tpf, tp, power, f.
+
+</details>
 
 ---
-
-## Navigation
 
 | | |
 |---|---|
-| ← Back | [Assignment README](README.md) |
+| ← Back | [README — Assignment](README.md) |
 | ↑ Module | [Module 2 Overview](../README.md) |
 | ↑ Course | [Course Overview](../../README.md) |
