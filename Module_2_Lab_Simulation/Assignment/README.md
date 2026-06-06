@@ -11,7 +11,7 @@
 | 1 | Simulation | [→](#1-methodology) |
 | 2 | Characterization Table | [→](#2-characterization-table) |
 | 3 | Observations | [→](#3-observations) |
-| 4 | Plots | [→](#4-plots) |
+| 4 | Plots | [→](#4-Extraction-of-the-following-metrics-from-simulation-result) |
 
 ---
 
