@@ -173,5 +173,5 @@
 | | |
 |---|---|
 | ← Back | [README — Assignment](README.md) |
-| ↑ Module | [Module 2 Overview](../README.md) |
+| ↑ Module | [Module 2 Overview](../Inverter_Characteristics.md) |
 | ↑ Course | [Course Overview](../../README.md) |
