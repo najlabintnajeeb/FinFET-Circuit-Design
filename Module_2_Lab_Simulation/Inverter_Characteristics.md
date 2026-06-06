@@ -344,8 +344,8 @@ plot r_out
 
 | File | Description |
 |------|-------------|
-| [`inverter_vtc.spice`](simulation/inverter_vtc.spice) | Full SPICE netlist — DC + transient analyses |
-| [`EXPLAINED.md`](simulation/EXPLAINED.md) | Line-by-line walkthrough of the SPICE deck |
+| [`inverter_vtc.spice`](./Assignments/inverter.spice) | Full SPICE netlist — DC + transient analyses |
+| [`EXPLAINED.md`](simulation/spice_explanation.md) | Line-by-line walkthrough of the SPICE deck |
 
 ---
 
