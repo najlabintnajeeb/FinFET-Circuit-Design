@@ -12,7 +12,7 @@
 | 2 | Characterization Table | [→](#2-characterization-table) |
 | 3 | Observations | [→](#3-observations) |
 | 4 | Plots | [→](#4-plots) |
-| 5 | Id and VTC for Different nfin | [→](#5-id-and-vtc-for-different-nfin-configurations) |
+
 ---
 
 ## 1. Methodology
@@ -172,39 +172,8 @@ Vuniq in 0 DC 0.518
 
 
 
-## 5. Id and VTC for Different nfin Configurations
+## 5. Detailed nfin Analysis
 
-### Voltage Transfer Characteristics (VTC) — Different W/L Ratios
+For VTC and Id plots across different fin configurations, see:
 
-> VTC shows how Vout changes with Vin. The point where Vout = Vin is the switching threshold Vth.
-> Notice how the curve shifts left/right as PMOS/NMOS ratio changes.
-
-| Configuration | Plot |
-|--------------|------|
-| PMOS 14 / NMOS 7 | ![VTC 14/7](../images/(VTC)14:7.png) |
-| PMOS 19 / NMOS 14 | ![VTC 19/14](../images/(VTC)19:14.png) |
-| PMOS 19 / NMOS 6 | ![VTC 19/6](../images/(VTC)19:6.png) |
-| PMOS 6 / NMOS 19 | ![VTC 6/19](../images/(VTC)6:19.png) |
-
-**Key observation:** PMOS > NMOS → curve shifts right (higher Vth). NMOS > PMOS → curve shifts left (lower Vth).
-
----
-
-### Drain Current (Id) — Different W/L Ratios
-
-> Id shows total current drawn from VDD vs input voltage.
-> More fins = more current. Asymmetric sizing changes the peak current point.
-
-| Configuration | Plot |
-|--------------|------|
-| PMOS 14 / NMOS 14 | ![ID 14/14](../images/(ID)14:14.png) |
-| PMOS 14 / NMOS 7 | ![ID 14/7](../images/(ID)14:7.png) |
-| PMOS 19 / NMOS 14 | ![ID 19/14](../images/(ID)19:14.png) |
-| PMOS 19 / NMOS 6 | ![ID 19/6](../images/(ID)19:6.png) |
-| PMOS 6 / NMOS 14 | ![ID 6/14](../images/(ID)6:14.png) |
-| PMOS 6 / NMOS 19 | ![ID 6/19](../images/(ID)6:19.png) |
-
-**Key observation:** Peak Id shifts in Vin position with asymmetric sizing, matching the Vth shift seen in VTC.
-
----
-
+👉 [ANALYSIS.md — nfin Experiments](ANALYSIS.md)
