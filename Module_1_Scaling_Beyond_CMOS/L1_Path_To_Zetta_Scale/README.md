@@ -8,7 +8,7 @@
 
 *Why the world needs a zettaflop — and what it will take to build one.*
 
-[📄 Portfolio Page](https://najlabintnajeeb.github.io/FinFET-Circuit-Design/Module_1_Scaling_Beyond_CMOS/L1_Path_To_Zetta_Scale/L1_portfolio.html) · [🏠 Course Home](../../README.md) · [→ Next: L2](../L2_CMOS_Evolution_And_Next_Gen_Candidates/README.md)
+[🏠 Course Home](../../README.md) · [→ Next: L2](../L2_CMOS_Evolution_And_Next_Gen_Candidates/README.md)
 
 </div>
 
